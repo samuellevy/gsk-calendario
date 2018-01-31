@@ -2,6 +2,10 @@
   width: 100%;
   max-width: 540px;
   margin: 0 auto;
+  @include break-max(1024px){
+    max-width: inherit;
+    padding: 0 10px;
+  }
 }
 .cld-main a{
   color: #0080FF;
@@ -15,6 +19,19 @@
   max-width: 300px;
   margin: auto;
   overflow: hidden;
+  @include break-max(1024px){
+    display: flex;
+    align-items: center;
+    background: $color1;
+    width: 100%;
+    max-width: inherit;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 30px;
+  }
 }
 .cld-datetime .today{
   position: relative;
@@ -36,20 +53,36 @@
   fill: #005EFF;
 }
 .cld-rwd{
+  @include break-max(1024px){
+    position: static;
+    width: 10px;
+    height: 15px;
+    background: url('../images/arrow_left_p.png');
+    margin-top: 0;
+  }
   position: absolute;
   left: 0;
   width: 48px;
   height: 48px;
   top: 50%;
   margin-top: -24px;
+  background: url('../images/arrow_left.png');
 }
 .cld-fwd{
+  @include break-max(1024px){
+    position: static;
+    width: 10px;
+    height: 15px;
+    background: url('../images/arrow_right_p.png');
+    margin-top: 0;
+  }
   position: absolute;
   right: 0;
   width: 48px;
   height: 48px;
   top: 50%;
   margin-top: -24px;
+  background: url('../images/arrow_right.png');
 }
 .cld-labels, .cld-days{
   padding-left: 0;
@@ -58,14 +91,23 @@
   font-weight: bold;
   text-transform: uppercase;
   color: #5A5F6C;
-  margin-bottom: 40px;;
+  margin-bottom: 40px;
   font-size: 16px;
+  @include break-max(1024px){
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #B8C0D0;
+    margin-bottom: 30px;
+  }
 }
 .cld-label, .cld-day{
   box-sizing: border-box;
   display: inline-block;
   width: 14.28%;
   text-align: center;
+  @include break-max(1024px){
+    font-size: 12px;
+  }
 }
 .cld-day.disableDay{
   opacity: 0.5;
@@ -80,6 +122,9 @@
   color: #7E828D;
   font-size: 20px;
   margin-bottom: 5px;
+  @include break-max(1024px){
+    font-size: 13px;
+  }
 }
 .cld-title{
   position: absolute;

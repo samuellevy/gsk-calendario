@@ -131,12 +131,12 @@ function createCalendar(calendar, element, adjuster){
         var rwd = document.createElement('div');
         rwd.className += " cld-rwd cld-nav";
         rwd.addEventListener('click', function(){createCalendar(calendar, element, -1);} );
-        rwd.innerHTML = '<img src="images/arrow_left.png" />';
+        rwd.innerHTML = '';
         datetime.appendChild(rwd);
       }
       var today = document.createElement('div');
       today.className += ' today';
-      //today.innerHTML = months[calendar.Selected.Month] + ", " + calendar.Selected.Year;
+      today.innerHTML = '<strong>' + months[calendar.Selected.Month] + "</strong>, " + calendar.Selected.Year;
       var titulo = document.querySelectorAll;
       $('.calendar_handle h2').html('<strong>'+ months[calendar.Selected.Month] + "</strong> <span>" + calendar.Selected.Year+ '</span>');
       datetime.appendChild(today);
@@ -144,7 +144,7 @@ function createCalendar(calendar, element, adjuster){
         var fwd = document.createElement('div');
         fwd.className += " cld-fwd cld-nav";
         fwd.addEventListener('click', function(){createCalendar(calendar, element, 1);} );
-        fwd.innerHTML = '<img src="images/arrow_right.png" />';
+        fwd.innerHTML = '';
         datetime.appendChild(fwd);
       }
       if(calendar.Options.DatetimeLocation){

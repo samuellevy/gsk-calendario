@@ -1,5 +1,8 @@
 .calendar {
     background: #EFF3F7;
+    @include break-max(1024px){
+        background: transparent;
+    }
     .labels_info {
         display: flex;
         font-size: 14px;
@@ -8,6 +11,9 @@
         position: absolute;
         width: 100%;
         bottom: 45px;
+        @include break-max(1024px) {
+            display: none;
+        }
         div {
             margin-right: 45px;
         }
@@ -58,6 +64,8 @@
         border-radius: 10px;
         @include break-max(1024px) {
             flex-direction: column;
+            box-shadow: none;
+            margin-top: 0;
         }
     }
     .days_marked{
@@ -67,6 +75,11 @@
         border-bottom-right-radius: 10px;
         padding-top: 5%;
         padding-left: 35px;
+        @include break-max(1024px) {
+            width: 100%;
+            border-radius: 0;
+            padding: 10% 20px 0;
+        }
         .button_dnw{
             background: #67CE00;
             text-align: center;
@@ -81,6 +94,9 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 0px 20px rgba(46,52,70,0.20);
+            @include break-max(1024px){
+                font-size: 12px;
+            }
             &:before {
                 content: '';
                 width: 16px;
@@ -103,6 +119,10 @@
         .list_calendar {
             padding-right: 35px;
             height: 550px;
+            @include break-max(1024px){
+                height: inherit;
+                padding-right: 0;
+            }
             &.filtred {
                 li {
                     display: none;
@@ -127,6 +147,9 @@
                 color: white;
                 text-transform: uppercase;
                 margin-bottom: 10px;
+                @include break-max(640px){
+                    font-size: 14px;
+                }
             }
             .type {
                 line-height: 18px;
@@ -141,6 +164,9 @@
                     color: #F0F4F7;
                     font-size: 17px;
                     font-weight: 500;
+                    @include break-max(640px){
+                        font-size: 14px;
+                    }
                 }
             }
             li {
@@ -191,6 +217,9 @@
             padding-right: 40px;
             margin-top: 10%;
             margin-bottom: 5%;
+            @include break-max(1024px){
+                padding-right: 0;
+            }
             a {
                 color: rgba(white, 0.7);
                 font-size: 16px;
@@ -215,6 +244,11 @@
             color: white;
             font-weight: normal;
             padding-right: 40px;
+            @include break-max(1024px){
+                margin-right: 0;
+                font-size: 16px;
+                text-align: center;
+            }
         }
     }
     .content {
@@ -223,11 +257,18 @@
         @include break-max(1440px) {
             padding: 0 10px;
         }
+        @include break-max(1024px) {
+            padding: 0;
+        }
     }
     #caleandar {
         position: relative;
         height: 350px;
         overflow: hidden;
+        @include break-max(1024px) {
+            height: inherit;
+            margin-bottom: 40px;
+        }
         .mCustomScrollBox{
             overflow: initial;
         }
@@ -267,6 +308,12 @@
                     box-shadow: 0 0px 20px rgba(46,52,70,0.15);
                     border-radius: 50%;
                     z-index: 0;
+                    @include break-max(1024px){
+                        width: 30px;
+                        height: 30px;
+                        margin-top: -15px;
+                        margin-left: -15px;
+                    }
                 }
             }
         }
@@ -290,6 +337,12 @@
                     box-shadow: 0 0px 20px rgba(46,52,70,0.15);
                     border-radius: 50%;
                     z-index: 0;
+                    @include break-max(1024px){
+                        width: 30px;
+                        height: 30px;
+                        margin-top: -15px;
+                        margin-left: -15px;
+                    }
                 }
             }
         }
@@ -314,6 +367,12 @@
                     border-radius: 50%;
                     box-shadow: none !important;
                     z-index: 0;
+                    @include break-max(1024px){
+                        width: 30px;
+                        height: 30px;
+                        margin-top: -15px;
+                        margin-left: -15px;
+                    }
                 }
             }
         }
@@ -327,6 +386,9 @@
             }
             .cld-nav{
                 display: none;
+                @include break-max(1024px) {
+                    display: block;
+                }
             }
             .cld-main{
                 max-width: 100%;
@@ -362,6 +424,12 @@
                 font-size: 22px;
                 color: #808691;
                 width: 77%;
+                @include break-max(640px){
+                    width: 40%;
+                    &:after {
+                        content: none !important;
+                    }
+                }
                 a {
                     color: #808691;
                 }
@@ -549,6 +617,9 @@
         .wrap {
             width: 80%;
             margin: 0 auto;
+            @include break-max(1024px) {
+                width: 100%;
+            }
         }
     }
     .calendar_handle {
@@ -559,9 +630,15 @@
         border-bottom: 1px solid rgba(#000000, 0.16);
         padding-bottom: 25px;
         margin-bottom: 40px;
+        @include break-max(1024px){
+            border-bottom: 0;
+        }
         .nav {
             text-transform: uppercase;
             color: #B8C0D0;
+            @include break-max(1024px){
+                display: none;
+            }
             a{
                 &.day {
                     margin-right: 20px;
@@ -575,6 +652,9 @@
         h2 {
             margin-right: auto;
             padding-left: 25px;
+            @include break-max(1024px){
+                display: none;
+            }
             strong {
                 text-transform: uppercase;
                 color: $color1;
@@ -588,6 +668,10 @@
         .media {
             width: 100%;
             margin-bottom: 20px;
+            @include break-max(1024px){
+                width: 70%;
+                margin-top: -30px;
+            }
             img {
                 margin: 0 auto;
                 display: block;
@@ -598,23 +682,138 @@
         display: flex;
         align-items: center;
         margin-top: 25px;
+        position: relative;
+        .menu_handle {
+            height: 22px;
+            position: absolute;
+            left: 0; 
+            top: 0;
+            width: 25px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+            margin-left: 20px;
+            z-index: 10;
+            &.active {
+                &:after, &:before, .separator {
+                    background: white;
+                }
+            }
+            @include break-max(1024px){
+                display: flex;
+            }
+            &:after, &:before {
+                content: '' !important;
+                width: 100%;
+                height: 4px;
+                background: #B8C0D0;
+                border-radius: 10px;
+                left: 0;
+                position: absolute;
+                transition: all 0.3s;
+            }
+            &:before {
+                top: 0;
+            }
+            &:after {
+                bottom: 0
+            }
+            .separator {
+                width: 100%;
+                height: 4px;
+                background: #B8C0D0;
+                transition: all 0.3s;
+                border-radius: 10px;
+                position: absolute;
+                top: 50%;
+                margin-top: -1.75px;
+                left: 0;
+            }
+        }
         .logo {
             background: url('../images/logo_c.png') no-repeat center;
             width: 107px;
             height: 60px;
+            @include break-max(1024px){ 
+                display: none;
+            }
         }
         nav {
             margin-left: auto;
             ul {
                 display: flex;
+                @include break-max(1024px){
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    padding-top: 67px;
+                    flex-direction: column;
+                    width: 0vw;
+                    overflow: hidden;
+                    background: white;
+                    height: 100vh;
+                    z-index: 9;
+                    transition: all 0.3s;
+                    background: linear-gradient(0deg, #ec553d 0%, #ec553d 0, #ffce00 110%);
+                    box-shadow:0 0px 20px rgba(46,52,70,0.7);
+                    &.active {
+                        width: 75vw;
+                    }
+                }
             }
-            a {
+            li {
+                @include break-max(1024px){
+                    width: 80%;
+                    margin-left: 30px;
+                    &:nth-child(2) {
+                        a {
+                            &:after{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        a {
+                            &:after {
+                                content: none;
+                            }
+                        }
+                    }
+                }
+            }
+            a.item {
                 font-size: 18px;
                 color: #5A5F6C;
                 letter-spacing: 0.10px;
                 margin-left: 40px;
                 display: flex;
                 align-items: center;
+                font-weight: 500;
+                position: relative;
+                padding-bottom: 40px;
+                @include break-max(1024px){
+                    margin-left: 0;
+                    color: white;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    white-space: nowrap;
+                    &:after {
+                        content: '';
+                        width: 30px;
+                        height: 1px;
+                        left: 0;
+                        bottom: 20px;
+                        background: white;
+                        position: absolute;
+                    }
+                    &:before {
+                        content: none !important;
+                    }
+                }
+                @include break-max(640px){ 
+                    font-size: 14px;
+                    white-space: normal;
+                }
                 &.dwn {
                     &:before {
                         content: '';

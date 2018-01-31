@@ -35,7 +35,7 @@ $(document).ready(function (){
             $(this).submit();
         }
     });
-    $('.calendar_handle .nav a').click(function(event){
+    $('.calendar_handle .nav a, #header li .day,#header li .month').click(function(event){
         event.preventDefault();
         $('.calendar_handle .nav a').removeClass('active');
         $(this).addClass('active');
@@ -49,19 +49,21 @@ $(document).ready(function (){
         }
     });
     
-    $('#caleandar').mCustomScrollbar({
-        scrollInertia: 250,
-        updateOnContentResize: false,
-        updateOnImageLoad: false,
-        callbacks:{
-            onScroll:function(){
-                myCustomFn(this);
+    if($(window).width() > 1024) {
+        $('#caleandar').mCustomScrollbar({
+            scrollInertia: 250,
+            updateOnContentResize: false,
+            updateOnImageLoad: false,
+            callbacks:{
+                onScroll:function(){
+                    myCustomFn(this);
+                }
             }
-        }
-    });
-    $('.list_calendar').mCustomScrollbar({
-        scrollInertia: 250
-    });
+        });
+        $('.list_calendar').mCustomScrollbar({
+            scrollInertia: 250
+        });
+    }
     function myCustomFn(el){
         var height_target = $('.mCSB_container').height();
         if(el.mcs.topPct == 100) {
@@ -111,7 +113,8 @@ $(document).ready(function (){
             $('.list_calendar').removeClass('filtred');
         }
     });
-    $('[data-target], .lightbox .close').on('click', function(){
+    $('[data-target], .lightbox .close').on('click', function(event){
+        event.preventDefault();
         var target = $(this).data('target');
         if($(this).hasClass('close')) {
             $('.lightbox').removeClass('active');
@@ -119,5 +122,10 @@ $(document).ready(function (){
         else {
             $('#' + target).addClass('active');
         }
+    });
+    $('.menu_handle').click(function(event){
+        event.preventDefault();
+        $(this).toggleClass('active');
+        $(this).next('ul').toggleClass('active');
     });
 });
