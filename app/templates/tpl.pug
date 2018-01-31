@@ -1,0 +1,18 @@
+block var
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(name="theme-color" content="#FDCC29")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css")
+		link(rel="stylesheet", href="css/main.css")
+		title #{title}
+	body(class=bodyClass)
+		block content
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js")
+		if map
+			script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv5yEuoYL3sInNCBl0ip75ai-eu2Z6z4w&callback=initMap")
+		script(src="js/main.js")

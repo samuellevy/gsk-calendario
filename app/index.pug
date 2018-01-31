@@ -1,0 +1,46 @@
+extends templates/tpl.pug
+block var
+	- var title = "Home";
+	- var bodyClass = "login";
+block content
+	.wrapper_full
+		a(href="#" class="logo")
+		.info_area
+			img(src="images/saude_dia.png")
+			.text_area
+				p Aqui no 
+					strong Calendário Digital Saúde em Dia GSK
+					|, você fica por dentro das principais 
+					strong datas comemorativas 
+					| do ano e tem acesso a 
+					strong conteúdos exclusivos 
+					| para promover a educação e a conscientização em Saúde na sua comunidade local. 
+			.mobile_buttons
+				a(href="#" class="button_primary login_handle") Login
+				a(href="#" class="button_secondary") QUERO ME CADASTRAR
+		.login_area
+			form.form_area
+				.wrap
+					h3.title Login
+					.form_item
+						label
+							span NOME DE USUÁRIO
+							input(type="text" class="input_text")
+					.form_item
+						label
+							span SENHA
+							input(type="password" class="input_text invalid")
+					.form_help
+						.form_item.check
+							label
+								input(type="checkbox" class="input_check")
+								span Manter-me logado
+						a(href="#" class="link") Esqueci minha senha
+						a(href="#" class="link-2") Quero me cadastrar
+
+						.form_action
+							button(class="button_primary") LOGIN
+				.wrap
+					h3.title NOVO USUÁRIO?
+					p.paragraph Faça seu cadastro em instantes e tenha acesso ao Calendário Digital Saúde em Dia GSK.
+					a(href="#" class="button_primary") QUERO ME CADASTRAR

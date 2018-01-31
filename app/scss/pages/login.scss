@@ -1,0 +1,154 @@
+.login {
+    .logo {
+        position: fixed;
+        background: url('../images/logo.png') no-repeat;
+        width: 135px;
+        height: 79px;
+        top: 30px;
+        left: 15px;
+        z-index: 1;
+        transition: all 0.3s;
+        opacity: 0;
+        @include break-max(768px) {
+            background: url('../images/logo_2.png') no-repeat;
+            width: 147px;
+            height: 86px;
+            left: 50%;
+            margin-left: -73.5px;
+        }
+    }
+    &.active {
+        .logo {
+            z-index: 3;
+            opacity: 1;
+        }
+    }
+    .wrapper_full {
+        display: flex;
+        height: 100vh;
+        position: relative;
+    }
+    .mobile_buttons {
+        display: none;
+        .button_primary {
+            margin-bottom: 10px;
+        }
+        @include break-max(768px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .info_area{
+        background: url('../images/bg_1.png'), linear-gradient(45deg, rgba(236,85,61,1) 0%, rgba(236,85,61,1) 14%, rgba(255,206,0,1) 100%);
+        background-position: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 55vw;
+        z-index: 2;
+        @include break-max(768px) {
+            width: 100vw;
+        }
+        @include break-max(640px) {
+            justify-content: flex-start;
+        }
+    }
+    .text_area {
+        max-width: 700px;
+        margin: 0 auto;
+        color: white;
+        font-size: 22px;
+        line-height: 40px;
+        text-align: center;
+        margin-top: 90px;
+        @include break-max(1280px) {
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        @include break-max(768px) {
+            margin-top: 10%;
+        }
+        @include break-max(640px) {
+            font-size: 14px;
+            line-height: 26px;
+            margin-top: 5%;
+        }
+    }
+    .login_area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45vw;
+        background: white;
+        transition: all ease-in 0.2s;
+        z-index: 2;
+        @include break-max(768px) {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            right: -100vw;
+            &.active {
+                right: 0;
+            }
+        }
+    }
+    .form_area {
+        width: 400px;
+        @include break-max(1280px) {
+            width: 90%;
+        }
+    }
+    .button_primary {
+        margin-top: 35px;
+    }
+    .wrap {
+        &:nth-child(2) {
+            margin-top: 25%;
+            border-top: 1px solid #B8C0D0;
+            padding-top: 10%;
+            @include break-max(768px) {
+                display: none;
+            }
+        }
+    }
+    .form_help {
+        .link-2{
+            display: none;
+        }
+        @include break-max(768px) {
+            flex-direction: column;
+            .form_item {
+                &.check {
+                    margin-right: auto;
+                }
+            }
+            .button_primary {
+                @include break-max(768px) {
+                    margin: 35px auto 20px;
+                }
+            }
+            .link {
+                order: 9;
+                margin-top: 10px;
+            }
+            .link-2 {
+                border-top: 1px solid #DEE7EF;
+                order: 10;
+                margin-top: 20px;
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $color2;
+                padding-top: 20px;
+            }
+        }
+    }
+    .paragraph {
+        font-size: 16px;
+        color: $color2;
+    }
+}

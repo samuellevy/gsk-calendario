@@ -1,0 +1,88 @@
+extends templates/tpl.pug
+block var
+	- var title = "Home";
+	- var bodyClass = "calendar";
+block content
+	.content
+		header(id="header")
+			.logo
+			nav
+				ul
+					li
+						a(href="#" class="dwn") Histórico de Downloads
+					li
+						a(href="#" class="conf") Configurações
+					li
+						a(href="#" class="logout") Logout
+		.wrapper_calendar
+			.item_calendar
+				.wrap
+					.calendar_handle
+						.media
+							img(src="images/saude_dia_c.png", alt="")
+						h2
+						.nav
+							a(href="" class="day") Dia
+							a(href="" class="month active") Mês
+					#caleandar
+					.labels_info
+						.star
+							p Receber Notificação por email
+						.date_important
+							p Data Importante
+						.holiday
+							p Feriado Nacional
+			.days_marked
+				h3 Navegue pelo calendário e faça o download dos arquivos disponíveis.
+				.nav_dates
+					a(href="#" class="all_dates active") Todas as Datas
+					a(href="#" class="dates_mark") Datas Marcadas
+				ul.list_calendar
+					-for(var i = 0; i<10; i++)
+						li.holiday
+							.media(data-target="image")
+								img(src="images/img.png", alt="")
+							.info
+								p.date 1 DE JANEIRO
+								p.type
+									small FERIADO NACIONAL
+									span Dia da Mundial da Paz
+								a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
+						li.star
+							.media(data-target="image")
+								img(src="images/img.png", alt="")
+							.info
+								p.date 1 DE JANEIRO
+								p.type
+									small FERIADO NACIONAL
+									span Dia da Mundial da Paz
+								a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
+						li.important
+							.media(data-target="image")
+								img(src="images/img.png", alt="")
+							.info
+								p.date 1 DE JANEIRO
+								p.type
+									small FERIADO NACIONAL
+									span Dia da Mundial da Paz
+								a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
+	.lightbox#dnw
+		.content.download
+			a(href="#" class="close"): img(src="images/close.png", alt="")
+			h5.head Selecione os arquivos <br> que deseja baixar
+			form(class="form_area")
+				.form_item.check
+					label
+						input(type="radio" class="input_check" name="c498")
+						span Email Marketing
+				.form_item.check
+					label
+						input(type="radio" class="input_check" name="c498")
+						span Post Redes Sociais
+				.form_action
+					button(class="button_dnw") DOWNLOAD
+	.lightbox#image
+		.content.image
+			a(href="#" class="close"): img(src="images/close.png", alt="")
+			.media
+				img(src="images/img_g.png", alt="")

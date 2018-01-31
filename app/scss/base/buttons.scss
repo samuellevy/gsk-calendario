@@ -1,0 +1,44 @@
+.button_primary {
+    background: $color3;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    border: 0;
+    width: 300px;
+    display: block;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    border: 2px solid transparent;
+    &:hover {
+        background: transparent;
+        border-color: $color3;
+        color: $color3;
+    }
+    @include break-max(768px) {
+        width: 280px;
+    }
+}
+.button_secondary {
+    background: white;
+    color: $color1;
+    text-transform: uppercase;
+    text-align: center;
+    border: 0;
+    width: 300px;
+    display: block;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    @include break-max(768px) {
+        width: 280px;
+    }
+}

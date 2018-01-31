@@ -1,0 +1,188 @@
+.form_area {
+    .hint {
+        font-size: 15px;
+        color: $color2;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        margin-top: -10px;
+        margin-bottom: 30px;
+        span {
+            color: $color1;
+            margin-right: 5px;
+        }
+    }
+    .link {
+        color: $color1;
+        font-size: 14px;
+    }
+    .link-2 {
+        color: $color3;
+        font-size: 14px;
+    }
+    .form_help {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .form_action {
+        width: 100%;
+    }
+    .select_style {
+        
+        label {
+            width: 100% !important;
+        }
+        select {
+            width: 100%;
+            height: 50px;
+            background: url('../images/arrow_select.png') no-repeat  85% center ;
+            appearance: none;
+            outline: none;
+            color: $color2;
+            font-size: 14px;
+            padding: 16px 25px 16px 10px;
+            border-radius: 3px;
+            &::-ms-expand {
+                display: none;
+            }
+        }
+    }
+    .form_item {
+        display: flex;
+        flex-wrap: wrap;
+        &.two {
+            justify-content: space-between;
+            @include break-max(768px) {
+
+            }
+            label {
+                width: 48%;
+                @include break-max(768px) {
+                    width: 100%;
+                }
+            }
+            .select_style {
+                width: 48%;
+                @include break-max(768px) {
+                    width: 100%;
+                    margin-bottom: 20px;;
+                }
+                select {
+                    background-position: 94% center;
+                }
+            }
+        }
+        &.two_select {
+            justify-content: space-between;
+            .select_style {
+                width: 10%;
+                @include break-max(768px) {
+                    width: 20%;
+                }
+            }
+            label {
+                &:first-child {
+                    width: 48%;
+                    @include break-max(768px) {
+                        width: 75%;
+                    }
+                }
+                &:last-child {
+                    width: 34%;
+                    @include break-max(768px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        input {
+            &.invalid{
+                border-color: #F55A08;
+                background: url('../images/invalid.png') no-repeat 95% center;
+            }
+            &.valid{
+                border-color: #67CE00;
+                background: url('../images/valid.png') no-repeat 95% center;
+            }
+        }
+        .input_text {
+            border: 1px solid #B8C0D0;
+            color: $color2;
+            padding: 16px 10px;
+            outline: none;
+            margin-bottom: 25px;
+            width: 100%;
+            font-size: 14px;
+            border-radius: 3px;
+            &:required {
+                padding: 16px 50px 16px 10px;
+            }
+        }
+    
+        label {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            span {
+                color: $color2;
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 500;
+                display: flex;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                span {
+                    color:  $color1;
+                    margin-left: 5px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.check {
+            label {
+                flex-direction: row;
+                span {
+                    font-size: 14px;
+                    display: flex;
+                    position: relative;
+                    padding-left: 25px;
+                    margin-bottom: 0;
+                    &:before {
+                        content: '';
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid #B8C0D0;
+                        margin-right: 10px;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        margin-top: -7.5px;
+                    }
+                    &:after {
+                        content: '';
+                        width: 9px;
+                        height: 9px;
+                        background: $color1;
+                        position: absolute;
+                        left: 3px;
+                        top: 50%;
+                        opacity: 0;
+                        margin-top: -4.5px;;
+                    }
+                }
+            }
+            .input_check {
+                display: none;
+                &:checked {
+                    + span {
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

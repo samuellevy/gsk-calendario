@@ -1,0 +1,19 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.title {
+    color: $color1;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+    letter-spacing: 0.5px;
+    @include break-max(768px) {
+        text-align: center;
+        padding-bottom: 20px;
+        + p {
+            justify-content: center;
+            margin-top: -30px !important;
+            margin-bottom: 50px !important;
+        }
+    }
+}

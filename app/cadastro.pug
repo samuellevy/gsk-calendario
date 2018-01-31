@@ -1,0 +1,72 @@
+extends templates/tpl.pug
+block var
+	- var title = "Home";
+	- var bodyClass = "register";
+block content
+	.wrapper_full
+		a(href="#" class="logo")
+		.info_area
+			img(src="images/saude_dia.png")
+			.text_area
+				p Faça seu cadastro em instantes e <br> tenha acesso ao Calendário Digital<br> Saúde em Dia GSK
+		.register_area
+			form(novalidate).form_area
+				.wrap
+					h3.title cadastre-se
+					p.hint
+						span * 
+						| Preenchimento obrigatório
+					.form_item.two
+						label
+							span NOME completo
+								span *
+							input(type="text" class="input_text" required)
+						label
+							span Email
+								span *
+							input(type="email" class="input_text" required)
+					.form_item
+						label
+							span Nome da Clinica
+								span *
+							input(type="text" class="input_text" required)
+					.form_item.two_select
+						label
+							span ENDEREÇO DA CLÍNICA 
+								span *
+							input(type="text" class="input_text" required)
+						.select_style
+							label
+								span uf
+								select(name="")
+									option(hidden selected)
+									option(value="1") RJ
+									option(value="2") SP
+									option(value="3") MG
+						label
+							span CIDADE
+								span *
+							input(type="text" class="input_text" required)
+					.form_item.two
+						.select_style
+							label
+								span É PROFISSIONAL DE SAÚDE?
+								select(name="")
+									option(hidden selected)
+									option(value="1") SIM
+									option(value="1") NÃO
+						label
+							span NÚMERO DO CONSELHO 
+							input(type="text" class="input_text")
+					.form_item.two
+						label
+							span SENHA
+								span *
+							input(type="text" class="input_text" required)
+						label
+							span CONFIRMAR SENHA
+								span *
+							input(type="email" class="input_text" required)
+					.form_help
+						.form_action
+							button(class="button_primary" type="submit") ME CADASTRAR!
