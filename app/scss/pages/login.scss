@@ -1,4 +1,7 @@
 .login {
+    #footer {
+
+    }
     .logo {
         position: fixed;
         background: url('../images/logo.png') no-repeat;
@@ -49,6 +52,9 @@
         z-index: 2;
         @include break-max(768px) {
             width: 100vw;
+            img {
+                width: 70%;
+            }
         }
         @include break-max(640px) {
             justify-content: flex-start;
@@ -80,6 +86,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         width: 45vw;
         background: white;
         transition: all ease-in 0.2s;
@@ -96,6 +103,8 @@
     }
     .form_area {
         width: 400px;
+        margin-top: auto;
+        margin-bottom: auto;
         @include break-max(1280px) {
             width: 90%;
         }

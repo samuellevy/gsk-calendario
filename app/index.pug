@@ -15,28 +15,31 @@ block content
 					| do ano e tem acesso a 
 					strong conteúdos exclusivos 
 					| para promover a educação e a conscientização em Saúde na sua comunidade local. 
+				br
+				br
+				h3 Participe conosco! 
 			.mobile_buttons
 				a(href="#" class="button_primary login_handle") Login
-				a(href="#" class="button_secondary") QUERO ME CADASTRAR
+				a(href="/cadastro.html" class="button_secondary") QUERO ME CADASTRAR
 		.login_area
-			form.form_area
+			form.form_area(novalidate)
 				.wrap
 					h3.title Login
 					.form_item
 						label
 							span NOME DE USUÁRIO
-							input(type="text" class="input_text")
+							input(type="text" class="input_text" required)
 					.form_item
 						label
 							span SENHA
-							input(type="password" class="input_text invalid")
+							input(type="password" class="input_text invalid" required)
 					.form_help
 						.form_item.check
 							label
 								input(type="checkbox" class="input_check")
 								span Manter-me logado
-						a(href="#" class="link") Esqueci minha senha
-						a(href="#" class="link-2") Quero me cadastrar
+						a(href="#" class="link" data-target="login") Esqueci minha senha
+						a(href="/cadastro.html" class="link-2") Quero me cadastrar
 
 						.form_action
 							button(class="button_primary") LOGIN
@@ -44,3 +47,23 @@ block content
 					h3.title NOVO USUÁRIO?
 					p.paragraph Faça seu cadastro em instantes e tenha acesso ao Calendário Digital Saúde em Dia GSK.
 					a(href="#" class="button_primary") QUERO ME CADASTRAR
+			footer#footer
+				.footer_links
+					a(href="#") Termos de uso
+					a(href="#") Declaração de privacidade
+					a(href="#") Política de cookies 
+				p.copy © 2018 GlaxoSmithKline Brasil Ltda. Todos os direitos reservados. Estrada dos Bandeirantes 8464 – Rio de Janeiro – RJ CEP: 22783-110. As marcas registradas pertencem ou são licenciadas ao grupo de empresas GSK.
+	.lightbox#login
+		.content.login
+			a(href="#" class="close"): img(src="images/close.png", alt="")
+			form(class="form_area forgot_pass" novalidate)
+				h3.title ESQUECI MINHA SENHA
+				.form_item
+					label
+						span DIGITE SEU EMAIL
+						input(type="text" class="input_text" required)
+				.form_action
+					button(class="button_primary") ENVIAR
+				.wrap
+					h3.title Pronto!
+					p Em alguns minutos você receberá um e-mail <br> para redefinir sua senha.

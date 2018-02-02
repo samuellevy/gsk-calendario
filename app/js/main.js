@@ -31,6 +31,9 @@ $(document).ready(function (){
         if($input.length > 0) {
             event.preventDefault();    
         }
+        else if($(this).hasClass('forgot_pass')) {
+            $('.forgot_pass').addClass('active');
+        }
         else {
             $(this).submit();
         }
