@@ -2,7 +2,9 @@
     .hint {
         font-size: 15px;
         color: $color2;
+        font-weight: 300;
         letter-spacing: 0.5px;
+        font-size: 15px;
         display: flex;
         align-items: center;
         margin-top: -10px;
@@ -30,6 +32,22 @@
         width: 100%;
     }
     .select_style {
+        span {
+            color: $color2;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            display: flex;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            font-size: 15px;
+            span {
+                color:  $color1;
+                margin-left: 5px;
+                margin-bottom: 0;
+            }
+        }
         
         label {
             width: 100% !important;
@@ -44,20 +62,63 @@
             font-size: 14px;
             padding: 16px 25px 16px 10px;
             border-radius: 3px;
+            margin-bottom: 25px;
+            border: 1px solid #B8C0D0;two
             &::-ms-expand {
                 display: none;
             }
         }
     }
-    .form_item {
+    .form_group {
         display: flex;
         flex-wrap: wrap;
+        .wrap_check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            margin-bottom: 25px;
+        }
+        .form_item {
+            &.check {
+                display: flex;
+                flex-direction: column;
+                > span {
+                    color: $color2;
+                    display: block;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    display: flex;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                    font-size: 15px;
+                    span {
+                        color:  $color1;
+                        margin-left: 5px;
+                        margin-bottom: 0;
+                    }
+                }
+                label  span{
+                    align-items: center;
+                    padding-left: 40px;
+                    margin-right: 25px;
+                    &:before {
+                        width: 32px;
+                        height: 32px;
+                        margin-top: -16px;
+                    }
+                    &:after {
+                        width: 26px;
+                        height: 26px;
+                        top: 0;
+                    }
+                }
+            }
+        }
         &.two {
             justify-content: space-between;
-            @include break-max(768px) {
-
-            }
-            label {
+            .form_item {
                 width: 48%;
                 @include break-max(768px) {
                     width: 100%;
@@ -77,26 +138,26 @@
         &.two_select {
             justify-content: space-between;
             .select_style {
-                width: 10%;
-                @include break-max(768px) {
-                    width: 20%;
+                width: 25%;
+                + .select_style {
+                    width: 71%;
+                    margin-left: 4%;
+                    select {
+                        background-position: 92% center;
+                    }
                 }
             }
-            label {
-                &:first-child {
-                    width: 48%;
-                    @include break-max(768px) {
-                        width: 75%;
-                    }
-                }
-                &:last-child {
-                    width: 34%;
-                    @include break-max(768px) {
-                        width: 100%;
-                    }
+            .form_item {
+                width: 48%;
+                @include break-max(768px) {
+                    width: 100%;
                 }
             }
         }
+    }
+    .form_item {
+        display: flex;
+        flex-wrap: wrap;
         input {
             &.invalid{
                 border-color: #F55A08;
@@ -132,7 +193,9 @@
                 font-weight: 500;
                 display: flex;
                 text-transform: uppercase;
+                font-weight: 300;
                 letter-spacing: 0.5px;
+                font-size: 15px;
                 span {
                     color:  $color1;
                     margin-left: 5px;

@@ -1,6 +1,8 @@
 .login {
-    #footer {
-
+    #footer{
+        @include break-max(768px) {
+            display: none;
+        }
     }
     .logo {
         position: fixed;
@@ -9,15 +11,18 @@
         height: 79px;
         top: 30px;
         left: 15px;
-        z-index: 1;
+        z-index: 9;
         transition: all 0.3s;
-        opacity: 0;
+        opacity: 1;
         @include break-max(768px) {
             background: url('../images/logo_2.png') no-repeat;
             width: 147px;
             height: 86px;
             left: 50%;
             margin-left: -73.5px;
+            background-size: cover;
+            top: 20px;
+            opacity: 0;
         }
     }
     &.active {
@@ -98,6 +103,9 @@
             right: -100vw;
             &.active {
                 right: 0;
+                .title {
+                    margin-top: 70px;
+                }
             }
         }
     }

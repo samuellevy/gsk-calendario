@@ -6,14 +6,26 @@
     line-height: 14px;
     color: #808691;
     text-align: center;
+    @include break-max(768px) {
+        background: #F0F4F7;
+        margin-bottom: 0;
+        padding: 40px 20px;
+    }
     .footer_links{
         display: flex;
         justify-content: center;
         width: 100%;
         margin-bottom: 25px;
+        @include break-max(768px) {
+            flex-direction: column;
+        }
         a {
             margin-left: 25px;
-            &:first-child{margin-left: 0}
+            @include break-max(768px) {
+                margin-left: 0;
+                margin-top: 25px;
+            }
+            &:first-child{margin-left: 0; margin-top: 0;}
             &:hover {
                 text-decoration: underline;
             }

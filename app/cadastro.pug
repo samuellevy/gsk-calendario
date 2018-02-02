@@ -16,57 +16,90 @@ block content
 					p.hint
 						span * 
 						| Preenchimento obrigatório
-					.form_item.two
-						label
-							span NOME completo
-								span *
-							input(type="text" class="input_text" required)
-						label
-							span Email
-								span *
-							input(type="email" class="input_text" required)
-					.form_item
-						label
-							span Nome da Clinica
-								span *
-							input(type="text" class="input_text" required)
-					.form_item.two_select
-						label
-							span ENDEREÇO DA CLÍNICA 
-								span *
-							input(type="text" class="input_text" required)
+					.form_group.two
+						.form_item
+							label
+								span NOME completo
+									span *
+								input(type="text" class="input_text" required)
+						.form_item
+							label
+								span Email
+									span *
+								input(type="email" class="input_text" required)
+					.form_group.two
+						.form_item
+							label
+								span Nome da Clinica
+									span *
+								input(type="text" class="input_text" required)
+						.form_item
+							label
+								span ENDEREÇO DA CLÍNICA 
+									span *
+								input(type="text" class="input_text" required)
+					.form_group.two_select
+						.form_item
+							.select_style
+								label
+									span uf
+									select(name="")
+										option(hidden selected)
+										option(value="1") RJ
+										option(value="2") SP
+										option(value="3") MG
+							.select_style
+								label
+									span CIDADE
+										span *
+									select(name="" required)
+										option(hidden selected)
+										option(value="1") Rio de Janeiro
+										option(value="2") São Paulo
+										option(value="3") Minas Gerais
+
+								
+						.form_item.check
+							span É PROFISSIONAL DE SAÚDE?
+							.wrap_check
+								label
+									input(type="checkbox" class="input_check")
+									span Sim
+								label
+									input(type="checkbox" class="input_check")
+									span Não
+					.form_group.two
 						.select_style
 							label
-								span uf
+								span PROFISSIONÃO
 								select(name="")
 									option(hidden selected)
-									option(value="1") RJ
-									option(value="2") SP
-									option(value="3") MG
-						label
-							span CIDADE
-								span *
-							input(type="text" class="input_text" required)
-					.form_item.two
-						.select_style
+									option(value="1") Médico
+									option(value="1") Médico
+									option(value="1") Médico
+									option(value="1") Médico
+						.form_item
 							label
-								span É PROFISSIONAL DE SAÚDE?
-								select(name="")
-									option(hidden selected)
-									option(value="1") SIM
-									option(value="1") NÃO
-						label
-							span NÚMERO DO CONSELHO 
-							input(type="text" class="input_text")
-					.form_item.two
-						label
-							span SENHA
-								span *
-							input(type="text" class="input_text" required)
-						label
-							span CONFIRMAR SENHA
-								span *
-							input(type="email" class="input_text" required)
+								span CRM, CRF ou COREM 
+								input(type="text" class="input_text")
+					.form_group.two
+						.form_item
+							label
+								span SENHA
+									span *
+								input(type="text" class="input_text" required)
+						.form_item
+							label
+								span CONFIRMAR SENHA
+									span *
+								input(type="email" class="input_text" required)
 					.form_help
 						.form_action
 							button(class="button_primary" type="submit") ME CADASTRAR!
+
+			footer#footer
+				.footer_links
+					a(href="#") Termos de uso
+					a(href="#") Declaração de privacidade
+					a(href="#") Política de cookies 
+				p.copy © 2018 GlaxoSmithKline Brasil Ltda. Todos os direitos reservados. Estrada dos Bandeirantes 8464 – Rio de Janeiro – RJ CEP: 22783-110. As marcas registradas pertencem ou são licenciadas ao grupo de empresas GSK.

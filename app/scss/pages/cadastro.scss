@@ -80,6 +80,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         width: 50vw;
         background: white;
         transition: all ease-in 0.2s;
@@ -96,6 +97,8 @@
     }
     .form_area {
         width: 90%;
+        margin-top: auto;
+        margin-bottom: auto;
     }
     .button_primary {
         margin-top: 35px;

@@ -17,7 +17,7 @@ $(document).ready(function (){
     });
     $('form').on( 'submit', function(event) {   
         
-        $(this).find('input:required').each(function() {
+        $(this).find('input:required, select:required').each(function() {
             if($(this).val() == '') {
                 $(this).removeClass('valid');
                 $(this).addClass('invalid');
