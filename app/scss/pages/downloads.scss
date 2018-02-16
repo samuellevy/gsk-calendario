@@ -1,0 +1,30 @@
+.donwloads{
+    @extend .config;
+    .info_head{
+        margin: 0 auto;
+    }
+    .list-dwn{
+        width: 100%;
+    }
+    .wrapper_calendar{
+        flex-wrap: wrap;
+    }
+    .form_area{
+        display: flex;
+        width: initial;
+        .toggle_action {
+            background: transparent;
+            border: 1px solid #B8C0D0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #B8C0D0;
+            height: 50px;
+            width: 135px;
+            text-align: center; 
+            margin-right: 15px; 
+        }
+        .select_style {
+            width: 180px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.config{
+    @extend .calendar;
+    @extend .register;
+    .logo {
+        position: static;
+    }
+    .register_area{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .button_primary {
+        margin: 0 0 20px auto;
+    }
+    .info_head{
+        @extend .calendar_handle;
+        width: 90%;
+        .title-1{
+            font-size: 34px;
+            font-weight: bold;
+            margin-right: auto;
+            color: $color1;
+        }
+        .title-2{
+            font-size: 22px;
+            font-weight: bold;
+            color: $color2;
+        }
+    }
+}

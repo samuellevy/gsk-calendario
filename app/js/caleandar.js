@@ -153,6 +153,44 @@ function createCalendar(calendar, element, adjuster){
       }
       else{mainSection.appendChild(datetime);}
   }
+  function AddDateTime2(){
+    var datetime = document.createElement('div');
+    datetime.className += "cld-datetime mobile";
+    if(calendar.Options.NavShow && !calendar.Options.NavVertical){
+      var rwd = document.createElement('div');
+      rwd.className += " cld-rwd cld-nav";
+      rwd.addEventListener('click', function(){createCalendar(calendar, element, -1);} );
+      rwd.innerHTML = '';
+      datetime.appendChild(rwd);
+    }
+    var today = document.createElement('div');
+    today.className += ' today';
+    today.innerHTML = '<strong>' + months[calendar.Selected.Month] + "</strong>";
+    var titulo = document.querySelectorAll;
+    datetime.appendChild(today);
+    if(calendar.Options.NavShow && !calendar.Options.NavVertical){
+      var fwd = document.createElement('div');
+      fwd.className += " cld-fwd cld-nav";
+      fwd.addEventListener('click', function(){createCalendar(calendar, element, 1);} );
+      fwd.innerHTML = '';
+      datetime.appendChild(fwd);
+    }
+    if(calendar.Options.DatetimeLocation){
+      document.getElementById(calendar.Options.DatetimeLocation).innerHTML = "";
+      document.getElementById(calendar.Options.DatetimeLocation).appendChild(datetime);
+    }
+    else{
+      var theParent = document.getElementById("caleandar");
+      theParent.insertBefore(datetime, theParent.firstChild);
+    }
+}
+function AddDateLabels(){
+  var labels = document.createElement('div');
+  labels.className += ' labels_info mobile';
+  labels.innerHTML = '<div class="star"> <p>Receber Notificação por email</p> </div> <div class="date_important"> <p>Data Importante</p> </div> <div class="holiday"> <p>Feriado Nacional</p> </div> ';
+  var theParent = document.getElementById("caleandar");
+  theParent.insertBefore(labels, theParent.firstChild);
+}
 
   function AddLabels(){
     var labels = document.createElement('ul');
@@ -297,6 +335,10 @@ function createCalendar(calendar, element, adjuster){
   }
   AddLabels();
   AddDays();
+  if(calendar.Options.DateTimeShow){
+    AddDateTime2();
+    AddDateLabels();
+  }
 }
 
 function caleandar(el, data, settings){

@@ -1,18 +1,35 @@
 .calendar {
-    background: #EFF3F7;
+    background: linear-gradient(to bottom, #c2d7e8 0%, #f6f6f6 0%, #c2d7e8 100%);
     @include break-max(1024px){
         background: transparent;
+    }
+    #footer {
+        .vacina_destaque {
+            display: block;
+            margin:  10px auto 0;
+
+        }
     }
     .labels_info {
         display: flex;
         font-size: 14px;
         color: #5A5F6C;
         font-weight: lighter;
-        position: absolute;
+        margin-top: 25px;
         width: 100%;
-        bottom: 45px;
+        margin-bottom: 35px;
+        display: flex;
         @include break-max(1024px) {
             display: none;
+        }
+        &.mobile{
+            display: none;
+            @include break-max(1024px) {
+                display: flex;
+            }
+        }
+        @include break-max(1024px) {
+            flex-direction: column;
         }
         div {
             margin-right: 45px;
@@ -58,8 +75,8 @@
         display: flex;
         background: white;
         margin-top: 30px;
-        min-height: 805px;
-        margin-bottom: 50px;
+        min-height: 809px;
+        margin-bottom: 15px;
         box-shadow: 0 0px 20px rgba(#2E3446, 0.11);
         border-radius: 10px;
         @include break-max(1024px) {
@@ -78,7 +95,7 @@
         @include break-max(1024px) {
             width: 100%;
             border-radius: 0;
-            padding: 10% 20px 0;
+            padding: 5% 20px 0;
         }
         .button_dnw{
             background: #67CE00;
@@ -219,6 +236,7 @@
             margin-bottom: 5%;
             @include break-max(1024px){
                 padding-right: 0;
+                margin-top: 5%;
             }
             a {
                 color: rgba(white, 0.7);
@@ -248,6 +266,7 @@
                 margin-right: 0;
                 font-size: 16px;
                 text-align: center;
+                padding-right: 0;
             }
         }
     }
@@ -268,6 +287,25 @@
         @include break-max(1024px) {
             height: inherit;
             margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            .labels_info{
+                order: 3;
+            }
+            &.list_days{
+                .cld-datetime.mobile{
+                    display: flex;
+                }
+            }
+            .cld-datetime {
+                order: 2;
+                &.mobile {
+                    display: none;
+                }
+            }
+            .cld-main{
+                order: 1;
+            }
         }
         .mCustomScrollBox{
             overflow: initial;
@@ -630,6 +668,10 @@
         border-bottom: 1px solid rgba(#000000, 0.16);
         padding-bottom: 25px;
         margin-bottom: 40px;
+        @include break-max(640px){
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
         @include break-max(1024px){
             border-bottom: 0;
         }
@@ -673,8 +715,13 @@
                 margin-top: -30px;
             }
             img {
-                margin: 0 auto;
+                margin: 10px auto 30px;
                 display: block;
+                max-width: 170px;
+                @include break-max(1024px){
+                    margin: 40px auto 45px;
+                    max-width: 60%;
+                }
             }
         }
     }
@@ -790,13 +837,20 @@
                 align-items: center;
                 font-weight: 500;
                 position: relative;
-                padding-bottom: 40px;
+
+                &.month, &.day{
+                    display: none;
+                }
                 @include break-max(1024px){
                     margin-left: 0;
                     color: white;
                     text-transform: uppercase;
                     font-size: 16px;
                     white-space: nowrap;
+                    padding-bottom: 40px;
+                    &.month, &.day{
+                        display: block;
+                    }
                     &:after {
                         content: '';
                         width: 30px;

@@ -39,6 +39,10 @@
   width: calc(100% - 40px);
   margin: auto;
   text-align: center;
+  display: none;
+  @include break-max(1024px) {
+    display: block;
+  }
 }
 .cld-nav{
   position: relative;

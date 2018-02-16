@@ -1,4 +1,12 @@
 .register {
+    .vacina_destaque{
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 1px;
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+    }
     .logo {
         position: fixed;
         background: url('../images/logo.png') no-repeat;
@@ -10,8 +18,9 @@
         transition: all 0.3s;
         @include break-max(768px) {
             background: url('../images/logo_2.png') no-repeat;
-            width: 147px;
-            height: 86px;
+            width: 165px;
+            height: 105px;
+            background-size: contain;
             position: static;
             display: block;
             margin: 30px auto;

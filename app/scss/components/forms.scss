@@ -135,6 +135,35 @@
                 }
             }
         }
+        &.four {
+            justify-content: space-between;
+            .form_item {
+                width: 48%;
+                justify-content: space-between;
+                label {
+                    width: 48%;
+                }             
+                @include break-max(768px) {
+                    width: 100%;
+                }
+            }
+            .select_style {
+                width: 48%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                > label {
+                    width: 48% !important;
+                }
+                @include break-max(768px) {
+                    width: 100%;
+                    margin-bottom: 20px;;
+                }
+                select {
+                    background-position: 94% center;
+                }
+            }
+        }
         &.two_select {
             justify-content: space-between;
             .select_style {
@@ -181,7 +210,7 @@
                 padding: 16px 50px 16px 10px;
             }
         }
-    
+        
         label {
             display: flex;
             flex-direction: column;

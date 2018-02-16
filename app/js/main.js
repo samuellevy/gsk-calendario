@@ -1,8 +1,8 @@
 if($('body').find('#caleandar').length > 0) {
     var events = [
-        {'Date': new Date(2018, 0, 1),  'Modificator': 'important', 'Title': 'Dia 1'},
-        {'Date': new Date(2018, 0, 2), 'Modificator': 'holiday', 'Title': 'Dia 2'},
-        {'Date': new Date(2018, 0, 3), 'Modificator': 'holiday star', 'Title': 'Dia 3'},
+        {'Date': new Date(2018, 1, 1),  'Modificator': 'important', 'Title': 'Dia 1'},
+        {'Date': new Date(2018, 1, 2), 'Modificator': 'holiday', 'Title': 'Dia 2'},
+        {'Date': new Date(2018, 1, 3), 'Modificator': 'holiday star', 'Title': 'Dia 3'},
     ];
     var settings = {};
     var element = document.getElementById('caleandar');
