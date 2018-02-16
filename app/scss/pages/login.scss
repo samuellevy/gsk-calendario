@@ -1,8 +1,9 @@
 .login {
     #footer{
     }
+    
     .vacina_destaque{
-        font-size: 12px;
+        font-size: 11px;
         line-height: 14px;
         letter-spacing: 1px;
         position: absolute;
@@ -80,11 +81,11 @@
         }
     }
     .text_area {
-        max-width: 700px;
+        max-width: 600px;
         margin: 0 auto;
         color: white;
-        font-size: 22px;
-        line-height: 40px;
+        font-size: 18px;
+        line-height: 35px;
         text-align: center;
         margin-top: 90px;
         @include break-max(1280px) {
@@ -139,7 +140,7 @@
     }
     .wrap {
         &:nth-child(2) {
-            margin-top: 25%;
+            margin-top: 12%;
             border-top: 1px solid #B8C0D0;
             padding-top: 10%;
             @include break-max(768px) {
@@ -183,6 +184,7 @@
     }
     .paragraph {
         font-size: 16px;
+        line-height: 1.5;
         color: $color2;
     }
 }

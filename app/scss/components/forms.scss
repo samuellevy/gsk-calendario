@@ -83,6 +83,7 @@
             &.check {
                 display: flex;
                 flex-direction: column;
+                text-transform: lowercase;
                 > span {
                     color: $color2;
                     display: block;
@@ -199,7 +200,8 @@
         }
         .input_text {
             border: 1px solid #B8C0D0;
-            color: $color2;
+            font-family: 'Montserrat';
+            color: #3a3a3a;
             padding: 16px 10px;
             outline: none;
             margin-bottom: 25px;
@@ -229,6 +231,9 @@
                     color:  $color1;
                     margin-left: 5px;
                     margin-bottom: 0;
+                }
+                &.keep{
+                    text-transform: lowercase;
                 }
             }
         }

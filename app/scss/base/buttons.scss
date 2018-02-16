@@ -1,23 +1,27 @@
 .button_primary {
-    background: $color3;
+    background: #2390ED;
     text-transform: uppercase;
     color: white;
     text-align: center;
-    border: 0;
+    font-family: 'Montserrat', sans-serif;
     width: 300px;
-    display: block;
-    padding: 20px;
+    padding-top: 2px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 16px;
     border-radius: 50px;
     letter-spacing: 0.5px;
     cursor: pointer;
-    transition: all 0.2s;
-    font-weight: 500;
+    line-height: 1;
+    transition: all 0.5s;
+    font-weight: 700;
     border: 2px solid transparent;
     &:hover {
-        background: transparent;
-        border-color: $color3;
-        color: $color3;
+        background: $color5;
+        color: #fff;
+        border: $color5;
     }
     @include break-max(768px) {
         width: 280px;
