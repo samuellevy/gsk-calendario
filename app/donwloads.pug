@@ -36,10 +36,11 @@ block content
 									option(value="2") JANEIRO
 									option(value="3") JANEIRO
 			ul.list-dwn
-				li
-					.media
-						img(src="images/img_grid.png", alt="")
-					a(href="#" class="dwn") BAIXAR NOVAMENTE
+				- for(var i=0; i<15; i++)
+					li
+						.media
+							img(src="images/img_grid.png", alt="")
+						a(href="#" class="dwn") BAIXAR NOVAMENTE
 		footer#footer
 			.footer_links
 				a(href="#") Termos de uso

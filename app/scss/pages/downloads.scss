@@ -2,9 +2,86 @@
     @extend .config;
     .info_head{
         margin: 0 auto;
+        max-height: 320px;
+        @media screen and (max-width: 1024px){
+            flex-direction: column;
+            max-height: initial;
+            align-items: center;
+            h2 {
+                display: block;
+                margin: 0 auto 30px !important;
+                padding: 0;
+                @media screen and (max-width: 768px){
+                    font-size: 25px !important;
+                    text-align: center;
+                }
+            }
+        }
     }
     .list-dwn{
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 410px;
+        @media screen and (max-width: 1024px){
+            height: initial;
+        }
+        .mCustomScrollBox {
+            width: 100%;
+        }
+        .mCSB_container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .mCSB_scrollTools, .mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonLeft, .mCSB_scrollTools .mCSB_buttonRight, .mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+            opacity: 1;
+        }
+        .mCSB_scrollTools .mCSB_draggerRail{
+            background: #DEE7EF;
+        }
+        .mCSB_dragger_bar {
+            background: #B8C0D0 !important;
+            width: 8px;
+            opacity: 1 !important;
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            width: 19%;
+            @media screen and (max-width: 1024px){
+                width: initial;
+            }
+            @media screen and (max-width: 768px){
+                width: 48%;
+            }
+            .media {
+                border: 2px solid white;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(#000,0.3);
+            }
+            .dwn{
+                color: #67CE00;
+                font-size: 13px;
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                &:before {
+                    content: '';
+                    background: url('../images/dnw_green.png') no-repeat;
+                    display: block;
+                    width: 20px;
+                    height: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
     }
     .wrapper_calendar{
         flex-wrap: wrap;
@@ -12,6 +89,7 @@
     .form_area{
         display: flex;
         width: initial;
+
         .toggle_action {
             background: transparent;
             border: 1px solid #B8C0D0;
@@ -25,6 +103,15 @@
         }
         .select_style {
             width: 180px;
+        }
+        @media screen and (max-width: 768px){
+            width: 100%;
+            .toggle_action{
+                 width: 50%;
+            }
+            .form_item{
+                width: 50%;
+            }
         }
     }
 }

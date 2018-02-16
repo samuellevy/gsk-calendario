@@ -63,6 +63,11 @@ $(document).ready(function (){
                 }
             }
         });
+        $('.list-dwn').mCustomScrollbar({
+            scrollInertia: 250,
+            updateOnContentResize: false,
+            updateOnImageLoad: false
+        });
         $('.list_calendar').mCustomScrollbar({
             scrollInertia: 250
         });
