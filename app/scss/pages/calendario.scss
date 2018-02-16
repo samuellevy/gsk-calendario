@@ -9,9 +9,18 @@
             margin:  10px auto 0;
 
         }
+        .footer_links{
+            a{
+                color: #808691;
+            }
+        } 
+        .copy{
+            color: #808691;
+        }
     }
     .labels_info {
         display: flex;
+        justify-content: center;
         font-size: 14px;
         color: #5A5F6C;
         font-weight: lighter;
@@ -32,7 +41,7 @@
             flex-direction: column;
         }
         div {
-            margin-right: 45px;
+            margin-right: 20px;
         }
         .star {
             display: flex;
@@ -74,7 +83,6 @@
     .wrapper_calendar{
         display: flex;
         background: white;
-        margin-top: 30px;
         min-height: 809px;
         margin-bottom: 15px;
         box-shadow: 0 0px 20px rgba(#2E3446, 0.11);
@@ -334,14 +342,12 @@
                     z-index: 2;
                 }
                 &:after {
-                    content:'';
+                    content: '';
                     position: absolute;
-                    height: 50px;
-                    width: 50px;
-                    left: 50%;
-                    margin-left: -25px;
-                    top: 50%;
-                    margin-top: -25px;
+                    height: 45px;
+                    width: 45px;
+                    left: 16px;
+                    top: -1px;
                     background: #2390ED;
                     box-shadow: 0 0px 20px rgba(46,52,70,0.15);
                     border-radius: 50%;
@@ -363,14 +369,12 @@
                     z-index: 2;
                 }
                 &:after {
-                    content:'';
+                    content: '';
                     position: absolute;
-                    height: 50px;
-                    width: 50px;
-                    left: 50%;
-                    margin-left: -25px;
-                    top: 50%;
-                    margin-top: -25px;
+                    height: 45px;
+                    width: 45px;
+                    left: 16px;
+                    top: -1px;
                     background: #67CE00;
                     box-shadow: 0 0px 20px rgba(46,52,70,0.15);
                     border-radius: 50%;
@@ -392,14 +396,13 @@
                     z-index: 2;
                 }
                 &:after {
-                    content:'';
+                    content: '';
                     position: absolute;
                     height: 60px;
                     width: 60px;
-                    left: 50%;
-                    margin-left: -30px;
-                    top: 50%;
-                    margin-top: -30px;
+                    left: 9px;
+                    margin-left: 0;
+                    top: -10px;
                     background: url(../images/star.png) no-repeat center;
                     background-size: cover;
                     border-radius: 50%;
@@ -666,7 +669,7 @@
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid rgba(#000000, 0.16);
-        padding-bottom: 25px;
+        padding-bottom: 18px;
         margin-bottom: 40px;
         @include break-max(640px){
             margin-bottom: 0;
@@ -693,7 +696,6 @@
         }
         h2 {
             margin-right: auto;
-            padding-left: 25px;
             @include break-max(1024px){
                 display: none;
             }
@@ -715,7 +717,7 @@
                 margin-top: -30px;
             }
             img {
-                margin: 10px auto 30px;
+                margin: 0 auto;
                 display: block;
                 max-width: 170px;
                 @include break-max(1024px){
@@ -728,7 +730,7 @@
     #header {
         display: flex;
         align-items: center;
-        margin-top: 25px;
+        margin: 15px 0;
         position: relative;
         .menu_handle {
             height: 22px;
@@ -778,9 +780,10 @@
             }
         }
         .logo {
-            background: url('../images/logo_c.png') no-repeat center;
-            width: 107px;
+            background: url(../images/logo_c.png) no-repeat center;
+            width: 90px;
             height: 60px;
+            background-size: contain;
             @include break-max(1024px){ 
                 display: none;
             }
@@ -829,7 +832,7 @@
                 }
             }
             a.item {
-                font-size: 18px;
+                font-size: 14px;
                 color: #5A5F6C;
                 letter-spacing: 0.10px;
                 margin-left: 40px;
