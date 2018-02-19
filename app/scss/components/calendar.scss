@@ -61,7 +61,7 @@
     position: static;
     width: 10px;
     height: 15px;
-    background: url('../images/arrow_left_p.png');
+    background: url('../images/arrow_left_p.png') no-repeat;
     margin-top: 0;
   }
   position: absolute;
@@ -70,14 +70,14 @@
   height: 48px;
   top: 50%;
   margin-top: -24px;
-  background: url('../images/arrow_left.png');
+  background: url('../images/arrow_left.png') no-repeat;
 }
 .cld-fwd{
   @include break-max(1024px){
     position: static;
     width: 10px;
     height: 15px;
-    background: url('../images/arrow_right_p.png');
+    background: url('../images/arrow_right_p.png') no-repeat;
     margin-top: 0;
   }
   position: absolute;
@@ -86,7 +86,7 @@
   height: 48px;
   top: 50%;
   margin-top: -24px;
-  background: url('../images/arrow_right.png');
+  background: url('../images/arrow_right.png') no-repeat;
 }
 .cld-labels, .cld-days{
   padding-left: 0;
@@ -125,7 +125,7 @@
   padding: 10px;
   color: #7E828D;
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   @include break-max(1024px){
     font-size: 13px;
   }

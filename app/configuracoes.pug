@@ -15,11 +15,13 @@ block content
 					li
 						a(href="#" class="item day") Classificar por Dia
 					li
-						a(href="#" class="item dwn") Histórico de Downloads
+						a(href="/calendario.html" class="item calendario ") Calendário
 					li
-						a(href="#" class="item conf") Configurações
+						a(href="/downloads.html" class="item dwn") Histórico de Downloads
 					li
-						a(href="#" class="item logout") Logout
+						a(href="/configuracoes.html" class="item conf active") Configurações
+					li
+						a(href="/" class="item logout") Logout
 		.wrapper_calendar
 			.register_area
 				.info_head
@@ -82,15 +84,16 @@ block content
 										input(type="checkbox" class="input_check")
 										span Não
 						.form_group.four
-							.select_style
-								label
-									span PROFISSIONÃO
-									select(name="")
-										option(hidden selected)
-										option(value="1") Médico
-										option(value="1") Médico
-										option(value="1") Médico
-										option(value="1") Médico
+							.form_item
+								.select_style
+									label
+										span PROFISSIONÃO
+										select(name="")
+											option(hidden selected)
+											option(value="1") Médico
+											option(value="1") Médico
+											option(value="1") Médico
+											option(value="1") Médico
 								.form_item
 									label
 										span CRM, CRF ou COREM 

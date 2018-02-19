@@ -8,12 +8,22 @@
         width: 100%;
         border-radius: 10px;
     }
+    .wrap_check{
+        label {
+            &:first-child {
+                width: 30%;
+            }
+            
+        }
+    }
     .button_primary {
         margin: 0 0 20px auto;
     }
     .info_head{
         @extend .calendar_handle;
         width: 90%;
+        margin: 15px auto 30px;
+        padding-bottom: 15px;
         .title-1{
             font-size: 34px;
             font-weight: bold;

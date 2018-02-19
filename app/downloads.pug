@@ -15,18 +15,19 @@ block content
 					li
 						a(href="#" class="item day") Classificar por Dia
 					li
-						a(href="#" class="item dwn") Histórico de Downloads
+						a(href="/calendario.html" class="item calendario ") Calendário
 					li
-						a(href="#" class="item conf") Configurações
+						a(href="/downloads.html" class="item dwn active") Histórico de Downloads
 					li
-						a(href="#" class="item logout") Logout
+						a(href="/configuracoes.html" class="item conf") Configurações
+					li
+						a(href="/" class="item logout") Logout
 		.wrapper_calendar
 			.info_head
 				.media
 					img(src="images/saude_dia_c.png", alt="")
 				h2.title-1 HISTÓRICO DE DOWNLOADS
 				form(novalidate).form_area
-					button(class="toggle_action") TODOS
 					.form_item
 						.select_style
 							label

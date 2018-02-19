@@ -136,4 +136,25 @@ $(document).ready(function (){
         $(this).toggleClass('active');
         $(this).next('ul').toggleClass('active');
     });
+    $('.select_style').append('<div class="selected"></div><ul></ul>');
+    $('.select_style select option').each(function(){
+        var pai = $(this).parents('.select_style'),
+        ul = pai.find('ul');
+        ul.append('<li rel="'+ $(this).val() +'">' + $(this).text() + '</li>');
+        if($(this).attr('selected')) {
+            pai.find('.selected').text($(this).text());
+        }
+    });
+
+    $('.select_style li').click(function(){
+        var pai = $(this).parents('.select_style'),
+        select = pai.find('select');
+        select.val($(this).attr('rel'));
+        pai.find('.selected').text($(this).text());
+        pai.find('ul').removeClass('active');
+    });
+    $('.select_style .selected').click(function(){
+        $('.select_style ul').removeClass('active');
+        $(this).parents('.select_style').find('ul').addClass('active');
+    });
 });
