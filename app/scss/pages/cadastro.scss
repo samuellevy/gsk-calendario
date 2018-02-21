@@ -53,10 +53,11 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        justify-content: center;
+        justify-content: baseline;
         width: 40vw;
         img {
             max-width: 60%;
+            margin-top: 20%;
         }
         @include break-max(768px) {
             width: 100vw;

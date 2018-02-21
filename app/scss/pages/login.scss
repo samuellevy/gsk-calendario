@@ -63,11 +63,12 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        justify-content: center;
+        justify-content: baseline;
         width: 55vw;
         z-index: 2;
         img {
-            max-width: 60%;
+            max-width: 40%;
+            margin-top: 15%;
         }
         @include break-max(768px) {
             width: 100vw;
@@ -114,6 +115,10 @@
         z-index: 2;
         padding-top: 50px;
         padding-bottom: 10px;
+        @include break-max(1366px) {
+            width: 35vw;
+            margin: 0 auto;
+        }
         @include break-max(768px) {
             position: absolute;
             width: 100vw;

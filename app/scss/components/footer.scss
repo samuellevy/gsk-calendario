@@ -6,6 +6,11 @@
     line-height: 14px;
     color: #808691;
     text-align: center;
+    @include break-max(1366px) {
+        br {
+            display: none;
+        }
+    }
     .vacina_destaque{
         position: static;
         font-size: 11px;
