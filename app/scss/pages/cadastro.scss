@@ -8,7 +8,7 @@
         bottom: 20px;
     }
     .logo {
-        position: fixed;
+        position: absolute;
         background: url('../images/logo.png') no-repeat;
         width: 135px;
         height: 79px;
@@ -29,7 +29,7 @@
     }
     .wrapper_full {
         display: flex;
-        height: 100vh;
+        min-height: 100vh;
         position: relative;
         @include break-max(768px) {
             flex-direction: column;
@@ -55,6 +55,9 @@
         flex-direction: column;
         justify-content: center;
         width: 40vw;
+        img {
+            max-width: 60%;
+        }
         @include break-max(768px) {
             width: 100vw;
             display: none;
@@ -71,10 +74,11 @@
         line-height: 40px;
         text-align: center;
         margin-top: 90px;
-        @include break-max(1280px) {
+        @include break-max(1366px) {
             padding: 0 20px;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 30px;
+            margin-top: 40px;
         }
         @include break-max(768px) {
             margin-top: 10%;
@@ -94,6 +98,8 @@
         background: white;
         transition: all ease-in 0.2s;
         margin: 0 auto;
+        padding-top: 50px;
+        padding-bottom: 10px;
         @include break-max(768px) {
             position: relative;;
             width: 100vw;
@@ -111,6 +117,7 @@
     }
     .button_primary {
         margin-top: 15px;
+        margin-bottom: 30px;
     }
     .wrap {
         &:nth-child(2) {

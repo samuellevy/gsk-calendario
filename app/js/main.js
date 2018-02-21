@@ -136,6 +136,10 @@ $(document).ready(function (){
         $(this).toggleClass('active');
         $(this).next('ul').toggleClass('active');
     });
+
+
+
+    
     $('.select_style').append('<div class="selected"></div><ul></ul>');
     $('.select_style select option').each(function(){
         var pai = $(this).parents('.select_style'),
