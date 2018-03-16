@@ -6,6 +6,9 @@
         position: absolute;
         left: 20px;
         bottom: 20px;
+        @include break-max(1366px) {
+            position: static;
+        }
     }
     .logo {
         position: absolute;
@@ -16,6 +19,11 @@
         left: 15px;
         z-index: 1;
         transition: all 0.3s;
+        @include break-max(1366px) {
+            background-size: cover;
+            width: 100px;
+            height: 50px;
+        }
         @include break-max(768px) {
             background: url('../images/logo_2.png') no-repeat;
             width: 165px;
@@ -56,7 +64,7 @@
         justify-content: baseline;
         width: 40vw;
         img {
-            max-width: 60%;
+            max-width:40%;
             margin-top: 20%;
         }
         @include break-max(768px) {

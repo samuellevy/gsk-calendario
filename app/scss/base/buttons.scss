@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 16px;
     border-radius: 50px;
     letter-spacing: 0.5px;
@@ -22,6 +23,10 @@
         background: $color5;
         color: #fff;
         border: $color5;
+    }
+    @include break-max(1366px) {
+        font-size: 14px;
+        height: 40px;
     }
     @include break-max(768px) {
         width: 280px;

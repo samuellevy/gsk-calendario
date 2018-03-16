@@ -17,6 +17,9 @@
     .link {
         color: $color1;
         font-size: 14px;
+        @include break-max(1366px) {
+            font-size: 13px;
+        }
     }
     .link-2 {
         color: $color3;
@@ -34,6 +37,9 @@
     .select_style {
         position: relative;
         margin-bottom: 25px;
+        @include break-max(1366px) {
+            margin-bottom: 15px;
+        }
         .selected{
             position: absolute;
             top: 27px;
@@ -46,6 +52,10 @@
             padding: 16px 25px 16px 10px;
             border: 1px solid #B8C0D0;
             text-transform: uppercase;
+            @include break-max(1366px) {
+                padding: 10px 25px 10px 10px;
+                height: 38px;
+            }
         }
         ul {
             position: absolute;
@@ -68,7 +78,9 @@
                 background: white;
                 text-transform: uppercase;
                 cursor: pointer;
-                
+                @include break-max(1366px) {
+                    padding: 10px 25px 10px 10px;
+                }
                 &:first-child{
                     display: none;
                 }
@@ -84,6 +96,10 @@
             font-weight: 300;
             letter-spacing: 0.5px;
             font-size: 15px;
+            @include break-max(1366px) {
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
             span {
                 color:  $color1;
                 margin-left: 5px;
@@ -107,6 +123,10 @@
             border: 1px solid #B8C0D0;
             visibility: hidden;
             text-transform: uppercase;
+            @include break-max(1366px) {
+                padding: 10px 25px 10px 10px;
+                height: 38px;
+            }
             &::-ms-expand {
                 display: none;
             }
@@ -121,6 +141,9 @@
             justify-content: center;
             height: 50px;
             margin-bottom: 25px;
+            @include break-max(1366px) {
+                height: 38px;
+            }
         }
         .form_item {
             &.check {
@@ -237,6 +260,7 @@
     .form_item {
         display: flex;
         flex-wrap: wrap;
+        align-items: baseline;
         input {
             &.invalid{
                 border-color: #F55A08;
@@ -257,8 +281,15 @@
             width: 100%;
             font-size: 14px;
             border-radius: 3px;
+            @include break-max(1366px) {
+                padding:  10px;
+                margin-bottom: 15px;
+            }
             &:required {
                 padding: 16px 50px 16px 10px;
+                @include break-max(1366px) {
+                    padding: 10px 50px 10px 10px;
+                }
             }
         }
         
@@ -276,13 +307,17 @@
                 font-weight: 300;
                 letter-spacing: 0.5px;
                 font-size: 15px;
+                @include break-max(1366px) {
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                }
                 span {
                     color:  $color1;
                     margin-left: 5px;
                     margin-bottom: 0;
                 }
                 &.keep{
-                    text-transform: lowercase;
+                    text-transform: inherit;
                 }
             }
         }
@@ -295,6 +330,9 @@
                     position: relative;
                     padding-left: 25px;
                     margin-bottom: 0;
+                    @include break-max(1366px) {
+                        font-size: 13px;
+                    }
                     &:before {
                         content: '';
                         width: 15px;

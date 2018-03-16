@@ -34,42 +34,19 @@ block content
 							a(href="" class="month active") Mês
 					#caleandar
 					.labels_info
-						.star
-							p Receber Notificação por email
 						.date_important
 							p Data Importante
 						.holiday
 							p Feriado Nacional
-			.days_marked
+			.days_marked.type2
 				h3 Navegue pelo calendário e faça o download dos arquivos disponíveis.
-				.nav_dates
-					a(href="#" class="all_dates active") Todas as Datas
-					a(href="#" class="dates_mark") Datas Marcadas
 				ul.list_calendar
-					-for(var i = 0; i<10; i++)
-						li.holiday
+					-for(var i = 0; i<1; i++)
+						li
 							.media(data-target="image")
-								img(src="images/img.png", alt="")
+								img(src="images/imuni.jpg", alt="")
 							.info
-								p.date 1 DE JANEIRO
-								p.type
-									small FERIADO NACIONAL
-									span Dia da Mundial da Paz
-								a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
-						li.star
-							.media(data-target="image")
-								img(src="images/img.png", alt="")
-							.info
-								p.date 1 DE JANEIRO
-								p.type
-									small FERIADO NACIONAL
-									span Dia da Mundial da Paz
-								a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
-						li.important
-							.media(data-target="image")
-								img(src="images/img.png", alt="")
-							.info
-								p.date 1 DE JANEIRO
+								p.date 1 de Janeiro
 								p.type
 									small FERIADO NACIONAL
 									span Dia da Mundial da Paz

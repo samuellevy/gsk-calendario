@@ -1,8 +1,8 @@
 if($('body').find('#caleandar').length > 0) {
     var events = [
-        {'Date': new Date(2018, 1, 1),  'Modificator': 'important', 'Title': 'Dia 1'},
-        {'Date': new Date(2018, 1, 2), 'Modificator': 'holiday', 'Title': 'Dia 2'},
-        {'Date': new Date(2018, 1, 3), 'Modificator': 'holiday star', 'Title': 'Dia 3'},
+        {'Date': new Date(2018, 2, 1),  'Modificator': 'important', 'Title': 'Dia 1'},
+        {'Date': new Date(2018, 2, 2), 'Modificator': 'important', 'Title': 'Dia 2'},
+        {'Date': new Date(2018, 2, 3), 'Modificator': 'important', 'Title': 'Dia 3'},
     ];
     var settings = {};
     var element = document.getElementById('caleandar');
@@ -106,10 +106,6 @@ $(document).ready(function (){
             });
         }
     }
-    $('.eventday').on('click', function(event) {
-        event.preventDefault();
-        $(this).prev().toggleClass('star');
-    });
     $('.nav_dates a').click(function(event) {
         event.preventDefault();
         $('.nav_dates a').removeClass('active');

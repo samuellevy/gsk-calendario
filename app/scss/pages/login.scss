@@ -1,4 +1,7 @@
-.login {    
+.login {
+    @include break-max(1366px) {
+
+    }
     .vacina_destaque{
         font-size: 11px;
         line-height: 14px;
@@ -6,6 +9,9 @@
         position: absolute;
         left: 20px;
         bottom: 20px;
+        @include break-max(1366px) {
+            position: static;
+        }
         @include break-max(768px) {
             display: none;
         }
@@ -20,6 +26,11 @@
         z-index: 9;
         transition: all 0.3s;
         opacity: 1;
+        @include break-max(1366px) {
+            background-size: cover;
+            width: 100px;
+            height: 50px;
+        }
         @include break-max(768px) {
             background: url('../images/saude_dia_c.png') no-repeat center;
             width: 165px;
@@ -67,7 +78,7 @@
         width: 55vw;
         z-index: 2;
         img {
-            max-width: 40%;
+            max-width: 35%;
             margin-top: 15%;
         }
         @include break-max(768px) {
@@ -91,8 +102,9 @@
         margin-top: 90px;
         @include break-max(1366px) {
             padding: 0 20px;
-            font-size: 18px;
-            line-height: 30px;
+            font-size: 16px;
+            line-height: 26px;
+            max-width: 540px;
             margin-top: 40px;
         }
         @include break-max(768px) {
@@ -116,7 +128,7 @@
         padding-top: 50px;
         padding-bottom: 10px;
         @include break-max(1366px) {
-            width: 35vw;
+            width: 30vw;
             margin: 0 auto;
         }
         @include break-max(768px) {
@@ -145,12 +157,20 @@
     }
     .button_primary {
         margin-top: 35px;
+        @include break-max(1366px) {
+            margin-top: 20px;
+        }
     }
     .wrap {
         &:nth-child(2) {
             margin-top: 12%;
             border-top: 1px solid #B8C0D0;
             padding-top: 10%;
+            @include break-max(1366px) {
+                padding-top: 8%;
+                margin-top: 8%;
+                margin-bottom: 10%;
+            }
             @include break-max(768px) {
                 display: none;
             }
@@ -194,5 +214,8 @@
         font-size: 16px;
         line-height: 1.5;
         color: $color2;
+        @include break-max(1366px) {
+            font-size: 13px;
+        }
     }
 }

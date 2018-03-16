@@ -1,30 +1,32 @@
 'use strict';
 
 var gulp = require('gulp'),
-	clean = require('gulp-clean'),
-	sass = require('gulp-sass'),
-	concat = require('gulp-concat'),
-	pug = require('gulp-pug'),
-	autoprefixer = require('gulp-autoprefixer'),
-	browserSync = require('browser-sync').create(),
-	sourcemaps = require('gulp-sourcemaps'),
-	autoprefixerOptions = {browsers: ['last 2 versions', '> 5%', 'Firefox ESR']};
+clean = require('gulp-clean'),
+sass = require('gulp-sass'),
+concat = require('gulp-concat'),
+pug = require('gulp-pug'),
+autoprefixer = require('gulp-autoprefixer'),
+browserSync = require('browser-sync').create(),
+sourcemaps = require('gulp-sourcemaps'),
+autoprefixerOptions = {browsers: ['last 2 versions', '> 5%', 'Firefox ESR']};
 
 var src = './app';
 
 
 gulp.task('clean', function () {
-    return gulp.src('./dist/', {read: false})
-        .pipe(clean());
+	return gulp.src('./dist/', {read: false})
+	.pipe(clean());
 });
-gulp.task('image', () =>
-    gulp.src(src + '/images/**')
-        .pipe(gulp.dest('dist/images'))
-);
+
+gulp.task('image', function () {
+	return gulp.src(src + '/images/**')
+	.pipe(gulp.dest('dist/images'))
+	.pipe(browserSync.stream());
+});
 
 gulp.task('fonts', () =>
-    gulp.src(src + '/scss/fonts/**')
-        .pipe(gulp.dest('dist/css/fonts'))
+gulp.src(src + '/scss/fonts/**')
+.pipe(gulp.dest('dist/css/fonts'))
 );
 
 gulp.task('pages', function() {	
@@ -50,13 +52,14 @@ gulp.task('sass', function () {
 	.pipe(browserSync.stream());
 });
 gulp.task('scripts', function() {
-  return gulp.src(src + '/js/*.js')
-    .pipe(sourcemaps.init())
-      .pipe(concat('main.js'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/js'))
+	return gulp.src(src + '/js/*.js')
+	.pipe(sourcemaps.init())
+	.pipe(concat('main.js'))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest('./dist/js'))
 	.pipe(browserSync.stream());
 });
+
 
 gulp.task('serve', ['sass', 'pages','image', 'scripts', 'fonts'], function() {
 	browserSync.init({

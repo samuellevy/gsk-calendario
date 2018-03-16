@@ -187,7 +187,7 @@ function createCalendar(calendar, element, adjuster){
 function AddDateLabels(){
   var labels = document.createElement('div');
   labels.className += ' labels_info mobile';
-  labels.innerHTML = '<div class="star"> <p>Receber Notificação por email</p> </div> <div class="date_important"> <p>Data Importante</p> </div> <div class="holiday"> <p>Feriado Nacional</p> </div> ';
+  labels.innerHTML = '<div class="date_important"> <p>Data Importante</p> </div> <div class="holiday"> <p>Feriado Nacional</p> </div> ';
   var theParent = document.getElementById("caleandar");
   theParent.insertBefore(labels, theParent.firstChild);
 }
