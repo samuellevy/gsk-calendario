@@ -41,23 +41,22 @@ block content
 			.days_marked.type2
 				h3 Navegue pelo calendário e faça o download dos arquivos disponíveis.
 				ul.list_calendar
-					-for(var i = 0; i<1; i++)
-						li
-							.media(data-target="image")
-								img(src="images/imuni.jpg", alt="")
-							.info
-								p.date 1 de Janeiro
-								p.type
-									small FERIADO NACIONAL
-									span Dia da Mundial da Paz
-								a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
+						li.loop
+							//.media(data-target="image")
+							//	img(src="images/imuni.jpg", alt="")
+							//.info
+							//	p.date 1 de Janeiro
+							//	p.type
+							//		small FERIADO NACIONAL
+							//		span Dia da Mundial da Paz
+							//	a(href="#" class="button_dnw" data-target="dnw") DOWNLOAD
 		footer#footer
 			.footer_links
 				a(href="#") Termos de uso
 				a(href="#") Declaração de privacidade
 				a(href="#") Política de cookies 
-			p.copy © 2018 GlaxoSmithKline Brasil Ltda. Todos os direitos reservados. Estrada dos Bandeirantes 8464 – Rio de Janeiro – RJ CEP: 22783-110. As marcas registradas pertencem ou são licenciadas ao grupo de empresas GSK.
-			span.vacina_destaque BR/VAC/0350/17 – FEVEREIRO/2018
+			p.copy © 2019 GlaxoSmithKline Brasil Ltda. Todos os direitos reservados. Estrada dos Bandeirantes 8464 – Rio de Janeiro – RJ CEP: 22783-110. As marcas registradas pertencem ou são licenciadas ao grupo de empresas GSK.
+			span.vacina_destaque BR/VAC/0350/17 – FEVEREIRO/2019
 	.lightbox#dnw
 		.content.download
 			a(href="#" class="close"): img(src="images/close.png", alt="")

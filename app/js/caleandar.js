@@ -339,6 +339,31 @@ function AddDateLabels(){
     AddDateTime2();
     AddDateLabels();
   }
+
+  /**
+   * Adições de manipulação no plugin para quando muda de mês
+   */
+  var events = calendar.Options.ModelChange;
+  var monthSelected = $('h2 strong').text();
+  $('.div-appended').html('');
+  events.forEach(function (value, index) {
+      if(value.Month == monthSelected){
+          $('.loop').append(
+              '<div class="div-appended">' +
+                '<div class="media">' +
+                    '<img src="images/imuni.jpg", alt="">' +
+                '</div>' +
+                '<div class="info">' +
+                    '<p class="date">'+events[index].Date.getDate()+ ' de ' + events[index].Month +'</p>' +
+                    '<p class="type">' +
+                        '<small>FERIADO NACIONAL</small>' +
+                        '<span>'+ events[index].Title +'</span>' +
+                    '</p> ' +
+                    '<a href="#" class="button_dnw" data-target="dnw">DOWNLOAD</a>' +
+                '</div>' +
+              '</div>');
+      }
+  });
 }
 
 function caleandar(el, data, settings){
