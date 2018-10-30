@@ -345,24 +345,38 @@ function AddDateLabels(){
    */
   var events = calendar.Options.ModelChange;
   var monthSelected = $('h2 strong').text();
+  var yearSelected = $('h2 span').text();
+  var feriado = function(value){
+    if(value.Modificator == 'star'){
+        return 'Data em Destaque';
+    }else if(value.Modificator == 'holiday'){
+        return 'Feriado Nacional';
+    }else{
+        return 'Data Importante';
+    }
+  };
   $('.div-appended').html('');
   events.forEach(function (value, index) {
-      if(value.Month == monthSelected){
+      if(value.Month == monthSelected && yearSelected == value.Date.getFullYear()){
           $('.loop').append(
               '<div class="div-appended">' +
                 '<div class="media">' +
                     '<img src="images/imuni.jpg", alt="">' +
                 '</div>' +
                 '<div class="info">' +
-                    '<p class="date">'+events[index].Date.getDate()+ ' de ' + events[index].Month +'</p>' +
+                    '<p class="date">'+value.Date.getDate()+ ' de ' + value.Month +'</p>' +
                     '<p class="type">' +
-                        '<small>FERIADO NACIONAL</small>' +
-                        '<span>'+ events[index].Title +'</span>' +
+                        '<small>'+ feriado(value) +'</small>' +
+                        '<span>'+ value.Title +'</span>' +
                     '</p> ' +
                     '<a href="#" class="button_dnw" data-target="dnw">DOWNLOAD</a>' +
                 '</div>' +
               '</div>');
       }
+  });
+
+  $('.button_dnw').click(function () {
+     $('.lightbox#dnw').addClass('active');
   });
 }
 
