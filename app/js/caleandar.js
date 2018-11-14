@@ -368,7 +368,7 @@ function AddDateLabels(){
                     '<p class="type">' +
                         '<small>'+ feriado(value) +'</small>' +
                         '<span>'+ value.Title +'</span>' +
-                    '</p> ' +
+                    '</p>' +
                     '<a href="#" class="button_dnw" data-target="dnw">DOWNLOAD</a>' +
                 '</div>' +
               '</div>');
