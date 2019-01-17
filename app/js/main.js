@@ -251,4 +251,9 @@ $(document).ready(function () {
         $('.select_style ul').removeClass('active');
         $(this).parents('.select_style').find('ul').addClass('active');
     });
+
+    $('.logar').click(function () {
+       $('.error-login').css('display', 'block');
+        $('.input_text').addClass('invalid');
+    });
 });
