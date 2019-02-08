@@ -78,7 +78,7 @@
         width: 55vw;
         z-index: 2;
         img {
-            max-width: 35%;
+            align-self: center;
             margin-top: 15%;
         }
         @include break-max(768px) {
