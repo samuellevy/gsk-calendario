@@ -15,6 +15,13 @@
         @include break-max(768px) {
             display: none;
         }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE10+ CSS styles go here */
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            z-index: 3;
+       }
     }
     .logo {
         position: absolute;
@@ -91,6 +98,10 @@
         @include break-max(640px) {
             justify-content: flex-start;
         }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE10+ CSS styles go here */
+            height: 100vh;
+       }
     }
     .text_area {
         max-width: 600px;
@@ -145,6 +156,10 @@
                 }
             }
         }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE10+ CSS styles go here */
+            justify-content: flex-start;
+       }
     }
     .form_area {
         width: 400px;

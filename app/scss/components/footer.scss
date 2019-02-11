@@ -11,6 +11,10 @@
             display: none;
         }
     }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+ CSS styles go here */
+        margin: 0 auto 30px;
+   }
     .vacina_destaque{
         position: static;
         font-size: 11px;
