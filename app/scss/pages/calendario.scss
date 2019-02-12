@@ -738,6 +738,11 @@
         border-bottom: 1px solid rgba(#000000, 0.16);
         padding-bottom: 18px;
         margin-bottom: 40px;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE10+ CSS styles go here */ 
+            display: flex;
+            justify-content: flex-start;
+        }
         @include break-max(640px){
             margin-bottom: 0;
             padding-bottom: 0;
