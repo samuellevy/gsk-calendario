@@ -88,8 +88,12 @@
   margin-top: -24px;
   background: url('../images/arrow_right.png') no-repeat;
 }
-.cld-labels, .cld-days{
+.cld-labels,.cld-days{
   padding-left: 0;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+  flex-wrap: wrap;
 }
 .cld-label {
   font-weight: bold;
