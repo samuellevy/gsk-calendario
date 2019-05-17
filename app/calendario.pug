@@ -28,14 +28,16 @@ block content
 					.calendar_handle
 						.media
 							img(src="images/saude_dia_c.png", alt="")
-						h2
-							strong Maio
-							span 2019
+						h2#month_properties
+							strong#month_name 
+							span#month_year 
 						.nav
 							a(href="" class="day") Dia
 							a(href="" class="month active") Mês
 					#calendar
 						include month.pug
+					#byDay
+						//- include byDay.pug
 					.labels_info
 						.date_important
 							p Data Importante
