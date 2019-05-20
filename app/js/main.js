@@ -5,7 +5,7 @@ $(document).ready(function () {
         $('body').toggleClass('active');
     });
     $('form').on('submit', function (event) {
-
+        
         $(this).find('input:required, select:required').each(function () {
             if ($(this).val() == '') {
                 $(this).removeClass('valid');
@@ -33,12 +33,21 @@ $(document).ready(function () {
         $(this).addClass('active');
         if ($(this).hasClass('day')) {
             $('#calendar').addClass('list_days');
+            // new custom scrollbar
+            $('.cld-main').mCustomScrollbar({ 
+                theme:"dark-3"        
+            });
         }
         else {
             $('#calendar').removeClass('list_days');
+            $('.cld-main').mCustomScrollbar('destroy');
         }
     });
 
+    $('.side_bar_holidays').mCustomScrollbar({ 
+        theme:"dark-3"        
+    });
+    
     if ($(window).width() > 1024) {
         $('#caleandar').mCustomScrollbar({
             scrollInertia: 250,
@@ -59,7 +68,7 @@ $(document).ready(function () {
             scrollInertia: 250
         });
     }
-
+    
     $('.nav_dates a').click(function (event) {
         event.preventDefault();
         $('.nav_dates a').removeClass('active');
@@ -86,21 +95,21 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         $(this).next('ul').toggleClass('active');
     });
-
-
+    
+    
     $('.select_style').append('<div class="selected"></div><ul></ul>');
     $('.select_style select option').each(function () {
         var pai = $(this).parents('.select_style'),
-            ul = pai.find('ul');
+        ul = pai.find('ul');
         ul.append('<li rel="' + $(this).val() + '">' + $(this).text() + '</li>');
         if ($(this).attr('selected')) {
             pai.find('.selected').text($(this).text());
         }
     });
-
+    
     $('.select_style li').click(function () {
         var pai = $(this).parents('.select_style'),
-            select = pai.find('select');
+        select = pai.find('select');
         select.val($(this).attr('rel'));
         pai.find('.selected').text($(this).text());
         pai.find('ul').removeClass('active');
@@ -109,9 +118,9 @@ $(document).ready(function () {
         $('.select_style ul').removeClass('active');
         $(this).parents('.select_style').find('ul').addClass('active');
     });
-
+    
     $('.logar').click(function () {
-       $('.error-login').css('display', 'block');
+        $('.error-login').css('display', 'block');
         $('.input_text').addClass('invalid');
     });
 });

@@ -188,7 +188,19 @@
       background-size: 110%;
       border-radius: 0px;
     }
-  }  
+  }
+  .mCSB_scrollTools, .mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonLeft, .mCSB_scrollTools .mCSB_buttonRight, .mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    opacity: 1;
+  }
+  .mCSB_scrollTools .mCSB_draggerRail{
+    background: #B8C0D0;
+    width: 2px;
+  }
+  .mCSB_dragger_bar {
+    background: #F55A08;
+    width: 8px;
+    opacity: 1;
+  }
 }
 
 //byday
@@ -197,7 +209,7 @@
     max-width: 100%;
     max-height: 380px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     scrollbar-color: #F55A08 #FFF;
     .cld-labels{
       display: none;

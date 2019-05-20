@@ -206,6 +206,11 @@ var calendar = {
             x++;
         }
 
+        var box_month = document.getElementById('month_name');
+        var box_year = document.getElementById('month_year');
+
+        box_month.innerHTML = this.months[month.firstDay.getMonth()];
+        box_year.innerHTML = month.firstDay.getFullYear();
         this.drawHolidays();
     },
     drawHolidays: function(){
@@ -233,6 +238,8 @@ var calendar = {
                 }
                 blockInfoHoliday[1].innerHTML = holidays[holiday].title;
                 blockInfoHoliday[2].innerHTML = type;
+
+                this.drawSideHoliday(holidays[holiday]);
             }catch(e){
         
             }
@@ -256,6 +263,7 @@ var calendar = {
         
         var objCldNumber = document.querySelectorAll('li.cld-day[data-x="'+x+'"][data-y="'+y+'"] p p');
         objCldNumber[0].innerHTML = this.dayWeekName[date.getDay()].substr(0,3);
+
         // console.log(date);
     },
     drawElementDay: function(container, text, style=null, date){
@@ -315,8 +323,32 @@ var calendar = {
             }
         }, false);        
     },
-    changeType: function(){},
-    mountSideBar: function(){}
+    drawSideHoliday: function(holiday){
+        var block_side_holidays = document.getElementById("block_side_holidays");
+        var side_holiday = document.createElement("li");
+        var media = document.createElement("div");
+        media.classList.add("media");
+        media.setAttribute("data-target","image");
+        media.innerHTML = "<img src='images/imuni.jpg' alt=''/>"
+
+        var info = document.createElement("div");
+        info.innerHTML = "<div class=info>";
+        info.innerHTML += "<p class=date>"+holiday.getDate()+"</p>";
+        info.innerHTML += "<p class=type><small>FERIADO NACIONAL</small><span>Dia da Mundial da Paz</span></p><a class=button_dnw href=# data-target=dnw>DOWNLOAD</a>";
+        info.innerHTML += "</div>"
+
+        block_side_holidays.appendChild(side_holiday);
+        side_holiday.appendChild(media);
+        side_holiday.appendChild(info);
+    },
+    clearSideHolidays: function(){
+        var objs = document.querySelectorAll('ul.side_bar_holidays');
+        for(var obj in objs){
+            try{
+                objs[obj].innerHTML = "";
+            }catch(e){}
+        }
+    }
 }
 
 

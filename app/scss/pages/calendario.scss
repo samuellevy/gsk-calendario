@@ -101,8 +101,9 @@
         border-bottom-right-radius: 10px;
         padding-top: 5%;
         padding-left: 35px;
+        padding-right: 35px;
         &.type2 {
-            .list_calendar {
+            .side_bar_holidays {
                 @include break-max(768px) {
                     display: flex;
                     align-items: center;
@@ -204,9 +205,12 @@
                 display: block;
             }
         }
-        .list_calendar {
-            padding-right: 35px;
+        .side_bar_holidays {
+            // padding-right: 35px;
             height: 600px;
+            overflow-x:hidden;
+            overflow-y:hidden;
+            scrollbar-color: #FFFFFF #007DD9;
             @include break-max(1024px){
                 height: inherit;
                 padding-right: 0;
@@ -229,6 +233,12 @@
                 background: white;
                 width: 8px;
                 opacity: 1;
+            }
+            .mCS-dark-3.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+                background: white;
+            }
+            .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+                background: white;
             }
             .date{
                 font-size: 16px;
