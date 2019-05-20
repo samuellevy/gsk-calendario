@@ -1,7 +1,8 @@
 var calendar = {
     months: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
     dayWeekName: ["DOMINGO", "SEGUNDA-FEIRA", "TERÇA-FEIRA", "QUARTA-FEIRA", "QUINTA-FEIRA", "SEXTA-FEIRA", "SÁBADO"],
-    actualMonth: 5,
+    actualMonth: null,
+    actualDate: null,
     init: function(){
         console.log('%cstarting app', 'color:green');
         calendar.mountCalendar();
@@ -116,7 +117,7 @@ var calendar = {
     },
     mountCalendar: function(){
         this.drawGrid();
-        this.drawDays('ofToday');
+        this.drawDays(new Date(2019,5,1));
     },
     drawGrid: function(){
         // console.log('%cmounting calendar', 'color:green');
@@ -163,73 +164,99 @@ var calendar = {
         caption.appendChild(content);
         block_days.appendChild(container);
     },
-    drawDays: function(workingMonth){
+    drawDays: function(date){
         var x=0;
         var y=0;
-        var day=0;
-        var iday=0;
-        var iDate=new Date(2019, workingMonth, iday);
-        workingMonth=4;
-
+        var day=null;
+        var i=0;
+        var style='currMonth';
+        
+        var month = {
+            firstDay: new Date(date.getFullYear(), date.getMonth(), 1),
+            firstDayWeek: new Date(date.getFullYear(), date.getMonth(), 1).getDay(),
+            lastDay: new Date(date.getFullYear(), date.getMonth()+1, 0)
+        }
+        var lastMonth = {
+            lastDay: new Date(date.getFullYear(), date.getMonth(), 0)
+        }
+        
+        i-=month.firstDayWeek;
+        this.actualDate = month.firstDay;
+        
+        console.log(month.firstDay);
+        console.log(month.firstDayWeek);
+        console.log(month.lastDay);
+        
         while (x < 6){
             while(y < 7){
-                this.drawDay(x,y,iDate.getDay(),'prevMonth',new Date(2019, workingMonth, iday));
+                if(month.firstDayWeek>0){
+                    if(i>=0 && i<month.lastDay.getDate()){
+                        style='currMonth';
+                    }
+                    else{
+                        style='prevMonth';
+                    }
+                }
+                day = new Date(month.firstDay.getFullYear(),month.firstDay.getMonth(),month.firstDay.getDate()+i);
+                this.drawDay(x,y,style,day);
                 y++;
-                iday++;
-                iDate=new Date(2019, workingMonth, iday);
+                i++;
             }
             var y = 0;
             x++;
         }
+
+        this.drawHolidays();
     },
     drawHolidays: function(){
         //lookup holidays
         var holidays = this.getHolidays();
-        // for (var holiday in holidays) {
-        //     // console.log(holidays[holiday].type);
-        //     try{
-        //         var stringDate = holidays[holiday].date.toDateString();
-        //         var obj = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"]');
-                
-        //         obj[0].firstChild.classList.add('eventday');
-        //         obj[0].firstChild.classList.add(holidays[holiday].type);
-                
-        //         var blockInfoHoliday = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"] p.cld-number p');
-        //         // console.log(blockInfoHoliday);
-                
-        //         if(holidays[holiday].type=='holiday'){
-        //             type="Feriado Nacional";
-        //         }else if(holidays[holiday].type=='important'){
-        //             type="Data Importante";
-        //         }else if(holidays[holiday].type=='star'){
-        //             type="Notificação Habilitada";
-        //         }
-        //         blockInfoHoliday[1].innerHTML = holidays[holiday].title;
-        //         blockInfoHoliday[2].innerHTML = type;
-        //     }catch(e){
-                
-        //     }
-            
-        // }
+        var style = null;
+        for (var holiday in holidays) {
+            // console.log(holidays[holiday].type);
+            try{
+                var stringDate = holidays[holiday].date.toDateString();
+                var obj = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"]');
         
-        // var allDays = document.querySelectorAll('li.cld-day');
-        // for (var selectedDay in allDays) {
-        //     // ctrl+shift+k (para abrir o console no mozilla firefox)
-        //     try{
-        //         var stringDate = allDays[selectedDay].getAttribute("data-date");
-        //     }catch(e){
-        //     }
-        //     // console.log(stringDate);
-        // }
+                obj[0].firstChild.classList.add('eventday');
+                obj[0].firstChild.classList.add(holidays[holiday].type);
+        
+                var blockInfoHoliday = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"] p.cld-number p');
+                // console.log(blockInfoHoliday);
+        
+                if(holidays[holiday].type=='holiday'){
+                    type="Feriado Nacional";
+                }else if(holidays[holiday].type=='important'){
+                    type="Data Importante";
+                }else if(holidays[holiday].type=='star'){
+                    type="Notificação Habilitada";
+                }
+                blockInfoHoliday[1].innerHTML = holidays[holiday].title;
+                blockInfoHoliday[2].innerHTML = type;
+            }catch(e){
+        
+            }
+        
+        }
+        
+        var allDays = document.querySelectorAll('li.cld-day');
+        for (var selectedDay in allDays) {
+            // ctrl+shift+k (para abrir o console no mozilla firefox)
+            try{
+                var stringDate = allDays[selectedDay].getAttribute("data-date");
+            }catch(e){
+            }
+            // console.log(stringDate);
+        }
     },
-    drawDay: function(x,y,day,style=null,date=null){
-        // console.log(date);
+    drawDay: function(x,y,style=null,date=null){
         var obj = document.querySelectorAll('li.cld-day[data-x="'+x+'"][data-y="'+y+'"] p span');
+        var day = date.getDate();
         this.drawElementDay(obj[0],day,style,date.toDateString());
         
         var objCldNumber = document.querySelectorAll('li.cld-day[data-x="'+x+'"][data-y="'+y+'"] p p');
         objCldNumber[0].innerHTML = this.dayWeekName[date.getDay()].substr(0,3);
-        console.log(date);
+        // console.log(date);
     },
     drawElementDay: function(container, text, style=null, date){
         container.innerHTML = text;
@@ -243,7 +270,29 @@ var calendar = {
         this.drawDays(month);
     },
     nextMonth: function(){
-
+        var date = this.actualDate;
+        date = new Date(date.getFullYear(),date.getMonth()+1,1);
+        this.actualDate = date;
+        this.clearDays();
+        this.clearHolidays();
+        this.drawDays(date);
+    },
+    previousMonth: function(){
+        var date = this.actualDate;
+        date = new Date(date.getFullYear(),date.getMonth()-1,1);
+        this.actualDate = date;
+        this.clearDays();
+        this.clearHolidays();
+        this.drawDays(date);
+    },
+    clearDays: function(){
+        var objs = document.querySelectorAll('li.cld-day');
+        for(var obj in objs){
+            try{
+                // objs[obj].classList.remove('currMonth');
+                objs[obj].classList.remove('prevMonth');
+            }catch(e){}
+        }
     },
     clearHolidays: function(){
         var objs = document.querySelectorAll('p.eventday');
@@ -258,8 +307,12 @@ var calendar = {
     },
     buttonsListener: function(){
         document.addEventListener('click', function (event) {
-            if (!event.target.matches('.cld-fwd')) return;
-            calendar.nextMonth();
+            if (event.target.matches('.cld-fwd')){
+                calendar.nextMonth();
+            }
+            if (event.target.matches('.cld-rwd')){
+                calendar.previousMonth();
+            }
         }, false);        
     },
     changeType: function(){},
