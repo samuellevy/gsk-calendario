@@ -32,12 +32,10 @@ $(document).ready(function () {
         $('.calendar_handle .nav a').removeClass('active');
         $(this).addClass('active');
         if ($(this).hasClass('day')) {
-            $('#caleandar').addClass('list_days');
-            $('.item_calendar .wrap').addClass('full');
+            $('#calendar').addClass('list_days');
         }
         else {
-            $('#caleandar').removeClass('list_days');
-            $('.item_calendar .wrap').removeClass('full');
+            $('#calendar').removeClass('list_days');
         }
     });
 
@@ -60,41 +58,6 @@ $(document).ready(function () {
         $('.list_calendar').mCustomScrollbar({
             scrollInertia: 250
         });
-    }
-
-    function myCustomFn(el) {
-        var height_target = $('.mCSB_container').height();
-        if (el.mcs.topPct == 100) {
-            $(el).mCustomScrollbar('scrollTo', '0%');
-            $(el).mCustomScrollbar("destroy");
-            $('.cld-fwd').trigger('click');
-            console.log('123');
-            $(el).mCustomScrollbar({
-                scrollInertia: 100,
-                updateOnContentResize: false,
-                updateOnImageLoad: false,
-                callbacks: {
-                    onScroll: function () {
-                        myCustomFn(this);
-                    }
-                }
-            });
-        }
-        else if (el.mcs.topPct == 0) {
-            $(el).mCustomScrollbar('scrollTo', '100%');
-            $(el).mCustomScrollbar("destroy");
-            $('.cld-rwd').trigger('click');
-            $(el).mCustomScrollbar({
-                scrollInertia: 100,
-                updateOnContentResize: false,
-                updateOnImageLoad: false,
-                callbacks: {
-                    onScroll: function () {
-                        myCustomFn(this);
-                    }
-                }
-            });
-        }
     }
 
     $('.nav_dates a').click(function (event) {

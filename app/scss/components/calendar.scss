@@ -138,7 +138,7 @@
     @include break-max(1024px){
       font-size: 13px;
     }
-    .new-cld-dayweek, .new-cld-title{
+    .new-cld-dayweek, .new-cld-title, .new-cld-type{
       display: none;
     }
   }
@@ -192,7 +192,7 @@
 }
 
 //byday
-#calendar{
+#calendar.list_days{
   .cld-main{
     max-width: 100%;
     max-height: 380px;
@@ -201,9 +201,6 @@
     scrollbar-color: #F55A08 #FFF;
     .cld-labels{
       display: none;
-    }
-    .cld-label{
-      // display: none;
     }
     #cld-days{
       flex-direction: column;
