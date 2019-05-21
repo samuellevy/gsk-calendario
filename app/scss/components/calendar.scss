@@ -21,6 +21,9 @@
     max-width: 300px;
     margin: auto;
     overflow: hidden;
+    #month_name_mobile{
+      display: none;
+    }
     @include break-max(1024px){
       display: flex;
       align-items: center;
@@ -33,7 +36,12 @@
       text-transform: uppercase;
       color: white;
       margin-bottom: 30px;
+      justify-content: space-around;
+      #month_name_mobile{
+        display: block;
+      }
     }
+    
   }
   .cld-datetime .today{
     position: relative;

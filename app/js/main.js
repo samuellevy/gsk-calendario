@@ -47,26 +47,21 @@ $(document).ready(function () {
     $('.side_bar_holidays').mCustomScrollbar({ 
         theme:"dark-3"        
     });
+
+    $( window ).resize(function() {
+        if ($(window).width() < 1024) {
+            $('#mCSB_1').removeClass('mCustomScrollBox mCS-dark-3 mCSB_vertical mCSB_inside');
+        }
+        if ($(window).width() > 1024) {
+            $('#mCSB_1').addClass('mCustomScrollBox mCS-dark-3 mCSB_vertical mCSB_inside');
+        }    
+    });
     
+    if ($(window).width() < 1024) {
+        $('#mCSB_1').removeClass('mCustomScrollBox mCS-dark-3 mCSB_vertical mCSB_inside');
+    }
     if ($(window).width() > 1024) {
-        $('#caleandar').mCustomScrollbar({
-            scrollInertia: 250,
-            updateOnContentResize: false,
-            updateOnImageLoad: false,
-            callbacks: {
-                onScroll: function () {
-                    myCustomFn(this);
-                }
-            }
-        });
-        $('.list-dwn').mCustomScrollbar({
-            scrollInertia: 250,
-            updateOnContentResize: false,
-            updateOnImageLoad: false
-        });
-        $('.list_calendar').mCustomScrollbar({
-            scrollInertia: 250
-        });
+        $('#mCSB_1').addClass('mCustomScrollBox mCS-dark-3 mCSB_vertical mCSB_inside');
     }
     
     $('.nav_dates a').click(function (event) {

@@ -16,102 +16,102 @@ var calendar = {
     getHolidays: function(){
         var holidays = [
             //Maio
-            {'date': new Date(2019, 4, 1), 'type': 'holiday', 'title': 'Dia do Trabalho/ Campanha Gripe'},
-            {'date': new Date(2019, 4, 8), 'type': 'important', 'title': 'Dia Internacional da Cruz Vermelha'},
-            {'date': new Date(2019, 4, 12), 'type': 'holiday', 'title': 'Dia da Enfermagem/ Dia das Mães'},
-            {'date': new Date(2019, 4, 13), 'type': 'important', 'title': 'Dia do Combate Mundial a Influenza'},
-            {'date': new Date(2019, 4, 15), 'type': 'important', 'title': 'Dia Internacional da Família'},
-            {'date': new Date(2019, 4, 31), 'type': 'important', 'title': 'Dia Mundial sem Tabaco/ Término Campanha Gripe'},
+            {'date': new Date(2019, 4, 1), 'type': 'holiday', 'title': 'Dia do Trabalho/ Campanha Gripe', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 8), 'type': 'important', 'title': 'Dia Internacional da Cruz Vermelha', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 12), 'type': 'holiday', 'title': 'Dia da Enfermagem/ Dia das Mães', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 13), 'type': 'important', 'title': 'Dia do Combate Mundial a Influenza', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 15), 'type': 'important', 'title': 'Dia Internacional da Família', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 31), 'type': 'important', 'title': 'Dia Mundial sem Tabaco/ Término Campanha Gripe', 'url': 'arquivo.pdf'},
             
             // Janeiro
-            {'date': new Date(2019, 0, 1), 'type': 'holiday', 'title': 'Dia mundial da paz'},
-            {'date': new Date(2019, 0, 20), 'type': 'important', 'title': 'Dia do farmacêutico'},
-            {'date': new Date(2019, 0, 28), 'type': 'important', 'title': 'Dia Nacional de Combate e Prevenção da Hanseníase'},
+            {'date': new Date(2019, 0, 1), 'type': 'holiday', 'title': 'Dia mundial da paz', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 0, 20), 'type': 'important', 'title': 'Dia do farmacêutico', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 0, 28), 'type': 'important', 'title': 'Dia Nacional de Combate e Prevenção da Hanseníase', 'url': 'arquivo.pdf'},
             
             // Fevereiro
-            {'date': new Date(2019, 1, 1), 'type': 'star', 'title': 'Campanha de Gripe'},
-            {'date': new Date(2019, 1, 4), 'type': 'important', 'title': 'Dia Mundial do Câncer'},
-            {'date': new Date(2019, 1, 11), 'type': 'important', 'title': 'Dia Mundial do Enfermo'},
-            {'date': new Date(2019, 1, 15), 'type': 'important', 'title': 'Dia Internacional de Luta contra o Câncer na Infância'},
+            {'date': new Date(2019, 1, 1), 'type': 'star', 'title': 'Campanha de Gripe', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 1, 4), 'type': 'important', 'title': 'Dia Mundial do Câncer', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 1, 11), 'type': 'important', 'title': 'Dia Mundial do Enfermo', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 1, 15), 'type': 'important', 'title': 'Dia Internacional de Luta contra o Câncer na Infância', 'url': 'arquivo.pdf'},
             
             // Março
-            {'date': new Date(2019, 2, 5), 'type': 'holiday', 'title': 'Carnaval'},
-            {'date': new Date(2019, 2, 8), 'type': 'important', 'title': 'Dia Internacional da Mulher'},
-            {'date': new Date(2019, 2, 20), 'type': 'important', 'title': 'Início do Outono'},
-            {'date': new Date(2019, 2, 21), 'type': 'important', 'title': 'Dia Internacional da Síndrome de Down'},
-            {'date': new Date(2019, 2, 22), 'type': 'important', 'title': 'Dia Mundial da Água'},
-            {'date': new Date(2019, 2, 31), 'type': 'important', 'title': 'Dia da Saúde e Nutrição'},
+            {'date': new Date(2019, 2, 5), 'type': 'holiday', 'title': 'Carnaval', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 2, 8), 'type': 'important', 'title': 'Dia Internacional da Mulher', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 2, 20), 'type': 'important', 'title': 'Início do Outono', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 2, 21), 'type': 'important', 'title': 'Dia Internacional da Síndrome de Down', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 2, 22), 'type': 'important', 'title': 'Dia Mundial da Água', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 2, 31), 'type': 'important', 'title': 'Dia da Saúde e Nutrição', 'url': 'arquivo.pdf'},
             
             // Abril
-            {'date': new Date(2019, 3, 1), 'type': 'important', 'title': 'Início Campanha Gripe'},
-            {'date': new Date(2019, 3, 2), 'type': 'important', 'title': 'Dia Mundial de Conscientização do Autismo'},
-            {'date': new Date(2019, 3, 4), 'type': 'important', 'title': 'Dia Nacional do Parkinsoniano'},
-            {'date': new Date(2019, 3, 7), 'type': 'important', 'title': 'Dia Mundial da Saúde'},
-            {'date': new Date(2019, 3, 11), 'type': 'important', 'title': 'Dia do Infectologista'},
-            {'date': new Date(2019, 3, 13), 'type': 'important', 'title': 'Dia do Jovem'},
-            {'date': new Date(2019, 3, 21), 'type': 'holiday', 'title': 'Páscoa'},
-            {'date': new Date(2019, 3, 24), 'type': 'star', 'title': 'Dia mundial da meningite'},
+            {'date': new Date(2019, 3, 1), 'type': 'important', 'title': 'Início Campanha Gripe', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 2), 'type': 'important', 'title': 'Dia Mundial de Conscientização do Autismo', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 4), 'type': 'important', 'title': 'Dia Nacional do Parkinsoniano', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 7), 'type': 'important', 'title': 'Dia Mundial da Saúde', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 11), 'type': 'important', 'title': 'Dia do Infectologista', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 13), 'type': 'important', 'title': 'Dia do Jovem', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 21), 'type': 'holiday', 'title': 'Páscoa', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 3, 24), 'type': 'star', 'title': 'Dia mundial da meningite', 'url': 'arquivo.pdf'},
             
             //Maio
-            {'date': new Date(2019, 4, 1), 'type': 'holiday', 'title': 'Dia do Trabalho/ Campanha Gripe'},
-            {'date': new Date(2019, 4, 8), 'type': 'important', 'title': 'Dia Internacional da Cruz Vermelha'},
-            {'date': new Date(2019, 4, 12), 'type': 'holiday', 'title': 'Dia da Enfermagem/ Dia das Mães'},
-            {'date': new Date(2019, 4, 13), 'type': 'important', 'title': 'Dia do Combate Mundial a Influenza'},
-            {'date': new Date(2019, 4, 15), 'type': 'important', 'title': 'Dia Internacional da Família'},
-            {'date': new Date(2019, 4, 31), 'type': 'important', 'title': 'Dia Mundial sem Tabaco/ Término Campanha Gripe'},
+            {'date': new Date(2019, 4, 1), 'type': 'holiday', 'title': 'Dia do Trabalho/ Campanha Gripe', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 8), 'type': 'important', 'title': 'Dia Internacional da Cruz Vermelha', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 12), 'type': 'holiday', 'title': 'Dia da Enfermagem/ Dia das Mães', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 13), 'type': 'important', 'title': 'Dia do Combate Mundial a Influenza', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 15), 'type': 'important', 'title': 'Dia Internacional da Família', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 4, 31), 'type': 'important', 'title': 'Dia Mundial sem Tabaco/ Término Campanha Gripe', 'url': 'arquivo.pdf'},
             
             // Junho
-            {'date': new Date(2019, 5, 5), 'type': 'important', 'title': 'Dia Mundial do Meio Ambiente/ Início da Campanha de catapora'},
-            {'date': new Date(2019, 5, 9), 'type': 'star', 'title': 'Dia mundial da imunização'},
-            {'date': new Date(2019, 5, 12), 'type': 'important', 'title': 'Dia dos Namorados'},
-            {'date': new Date(2019, 5, 21), 'type': 'important', 'title': 'Início do Inverno'},
+            {'date': new Date(2019, 5, 5), 'type': 'important', 'title': 'Dia Mundial do Meio Ambiente/ Início da Campanha de catapora', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 5, 9), 'type': 'star', 'title': 'Dia mundial da imunização', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 5, 12), 'type': 'important', 'title': 'Dia dos Namorados', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 5, 21), 'type': 'important', 'title': 'Início do Inverno', 'url': 'arquivo.pdf'},
             
             // Julho
-            {'date': new Date(2019, 6, 1), 'type': 'important', 'title': 'Dia da Vacina BCG/ Campanha de catapora'},
-            {'date': new Date(2019, 6, 2), 'type': 'important', 'title': 'Dia do Hospital'},
-            {'date': new Date(2019, 6, 20), 'type': 'important', 'title': 'Dia do Amigo'},
-            {'date': new Date(2019, 6, 26), 'type': 'important', 'title': 'Dia dos Avós'},
-            {'date': new Date(2019, 6, 27), 'type': 'important', 'title': ' Dia do Pediatra'},
-            {'date': new Date(2019, 6, 28), 'type': 'star', 'title': 'Dia Mundial de Luta Contra as Hepatites Virais'},
+            {'date': new Date(2019, 6, 1), 'type': 'important', 'title': 'Dia da Vacina BCG/ Campanha de catapora', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 6, 2), 'type': 'important', 'title': 'Dia do Hospital', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 6, 20), 'type': 'important', 'title': 'Dia do Amigo', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 6, 26), 'type': 'important', 'title': 'Dia dos Avós', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 6, 27), 'type': 'important', 'title': ' Dia do Pediatra', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 6, 28), 'type': 'star', 'title': 'Dia Mundial de Luta Contra as Hepatites Virais', 'url': 'arquivo.pdf'},
             
             // Agosto
-            {'date': new Date(2019, 7, 5), 'type': 'important', 'title': 'Dia da Farmácia'},
-            {'date': new Date(2019, 7, 11), 'type': 'important', 'title': 'Dias dos Pais'},
-            {'date': new Date(2019, 7, 24), 'type': 'important', 'title': 'Dia da Infância'},
-            {'date': new Date(2019, 7, 29), 'type': 'important', 'title': 'Dia Nacional de Combate ao Fumo/ Fim da Campanha de catapora'},
+            {'date': new Date(2019, 7, 5), 'type': 'important', 'title': 'Dia da Farmácia', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 7, 11), 'type': 'important', 'title': 'Dias dos Pais', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 7, 24), 'type': 'important', 'title': 'Dia da Infância', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 7, 29), 'type': 'important', 'title': 'Dia Nacional de Combate ao Fumo/ Fim da Campanha de catapora', 'url': 'arquivo.pdf'},
             
             // Setembro
-            {'date': new Date(2019, 8, 5), 'type': 'important', 'title': 'Dia do Oficial de Farmácia'},
-            {'date': new Date(2019, 8, 8), 'type': 'important', 'title': 'Dia Nacional de Luta por Medicamento'},
-            {'date': new Date(2019, 8, 21), 'type': 'important', 'title': 'Dia da Luta Nacional das Pessoas com Deficiências'},
-            {'date': new Date(2019, 8, 23), 'type': 'star', 'title': 'Início da Campanha de Catapora'},
-            {'date': new Date(2019, 8, 27), 'type': 'important', 'title': 'Dia Nacional de Doação de Órgãos'},
-            {'date': new Date(2019, 8, 29), 'type': 'important', 'title': 'Dia Mundial do Coração'},
+            {'date': new Date(2019, 8, 5), 'type': 'important', 'title': 'Dia do Oficial de Farmácia', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 8, 8), 'type': 'important', 'title': 'Dia Nacional de Luta por Medicamento', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 8, 21), 'type': 'important', 'title': 'Dia da Luta Nacional das Pessoas com Deficiências', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 8, 23), 'type': 'star', 'title': 'Início da Campanha de Catapora', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 8, 27), 'type': 'important', 'title': 'Dia Nacional de Doação de Órgãos', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 8, 29), 'type': 'important', 'title': 'Dia Mundial do Coração', 'url': 'arquivo.pdf'},
             
             // Outubro
-            {'date': new Date(2019, 9, 1), 'type': 'important', 'title': 'Dia do Idoso/Dia Internacional da Terceira Idade'},
-            {'date': new Date(2019, 9, 4), 'type': 'important', 'title': 'Dia Nacional do Agente Comunitário de Saúde'},
-            {'date': new Date(2019, 9, 10), 'type': 'important', 'title': 'Dia Mundial da Saúde Mental'},
-            {'date': new Date(2019, 9, 11), 'type': 'important', 'title': 'Dia Internacional da Menina'},
-            {'date': new Date(2019, 9, 12), 'type': 'holiday', 'title': 'Dia das Crianças'},
-            {'date': new Date(2019, 9, 17), 'type': 'important', 'title': 'Dia Nacional da Vacinação'},
-            {'date': new Date(2019, 9, 18), 'type': 'important', 'title': 'Dia do Médico'},
-            {'date': new Date(2019, 9, 24), 'type': 'important', 'title': 'Dia Mundial de Combate à Poliomielite'},
+            {'date': new Date(2019, 9, 1), 'type': 'important', 'title': 'Dia do Idoso/Dia Internacional da Terceira Idade', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 4), 'type': 'important', 'title': 'Dia Nacional do Agente Comunitário de Saúde', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 10), 'type': 'important', 'title': 'Dia Mundial da Saúde Mental', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 11), 'type': 'important', 'title': 'Dia Internacional da Menina', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 12), 'type': 'holiday', 'title': 'Dia das Crianças', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 17), 'type': 'important', 'title': 'Dia Nacional da Vacinação', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 18), 'type': 'important', 'title': 'Dia do Médico', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 9, 24), 'type': 'important', 'title': 'Dia Mundial de Combate à Poliomielite', 'url': 'arquivo.pdf'},
             
             // Novembro
-            {'date': new Date(2019, 10, 12), 'type': 'star', 'title': 'Dia mundial do combate a pneumonia'},
-            {'date': new Date(2019, 10, 14), 'type': 'important', 'title': 'Dia mundial do Diabetes'},
-            {'date': new Date(2019, 10, 20), 'type': 'important', 'title': 'Dia do Biomédico'},
-            {'date': new Date(2019, 10, 23), 'type': 'important', 'title': 'Dia Nacional de Combate ao Câncer Infantil'},
-            {'date': new Date(2019, 10, 25), 'type': 'important', 'title': 'Dia Nacional do Doador de Sangue'},
+            {'date': new Date(2019, 10, 12), 'type': 'star', 'title': 'Dia mundial do combate a pneumonia', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 10, 14), 'type': 'important', 'title': 'Dia mundial do Diabetes', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 10, 20), 'type': 'important', 'title': 'Dia do Biomédico', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 10, 23), 'type': 'important', 'title': 'Dia Nacional de Combate ao Câncer Infantil', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 10, 25), 'type': 'important', 'title': 'Dia Nacional do Doador de Sangue', 'url': 'arquivo.pdf'},
             
             //Dezembro
-            {'date': new Date(2019, 11, 1), 'type': 'important', 'title': 'Dia Mundial de Luta Contra a Aids'},
-            {'date': new Date(2019, 11, 3), 'type': 'important', 'title': 'Dia Internacional do Portador de Deficiência'},
-            {'date': new Date(2019, 11, 9), 'type': 'important', 'title': 'Dia da Criança Especial'},
-            {'date': new Date(2019, 11, 21), 'type': 'important', 'title': 'Início do Verão'},
-            {'date': new Date(2019, 11, 25), 'type': 'holiday', 'title': 'Natal'},
-            {'date': new Date(2019, 11, 31), 'type': 'holiday', 'title': 'Réveillon'},
+            {'date': new Date(2019, 11, 1), 'type': 'important', 'title': 'Dia Mundial de Luta Contra a Aids', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 11, 3), 'type': 'important', 'title': 'Dia Internacional do Portador de Deficiência', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 11, 9), 'type': 'important', 'title': 'Dia da Criança Especial', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 11, 21), 'type': 'important', 'title': 'Início do Verão', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 11, 25), 'type': 'holiday', 'title': 'Natal', 'url': 'arquivo.pdf'},
+            {'date': new Date(2019, 11, 31), 'type': 'holiday', 'title': 'Réveillon', 'url': 'arquivo.pdf'},
         ];
         return holidays;
     },
@@ -120,7 +120,6 @@ var calendar = {
         this.drawDays(new Date());
     },
     drawGrid: function(){
-        // console.log('%cmounting calendar', 'color:green');
         var x = 0;
         while (x < 6){
             var y = 0;
@@ -183,9 +182,9 @@ var calendar = {
         i-=month.firstDayWeek;
         this.actualDate = month.firstDay;
         
-        console.log(month.firstDay);
-        console.log(month.firstDayWeek);
-        console.log(month.lastDay);
+        // console.log(month.firstDay);
+        // console.log(month.firstDayWeek);
+        // console.log(month.lastDay);
         
         while (x < 6){
             while(y < 7){
@@ -208,9 +207,15 @@ var calendar = {
 
         var box_month = document.getElementById('month_name');
         var box_year = document.getElementById('month_year');
-
+        
         box_month.innerHTML = this.months[month.firstDay.getMonth()];
         box_year.innerHTML = month.firstDay.getFullYear();
+        
+        var box_month_mobile = document.getElementById('month_name_mobile');
+
+        console.log(month.firstDay.getFullYear());
+
+        box_month_mobile.innerHTML = this.months[month.firstDay.getMonth()] + ", " + month.firstDay.getFullYear();
         this.drawHolidays();
     },
     drawHolidays: function(){
@@ -218,7 +223,6 @@ var calendar = {
         var holidays = this.getHolidays();
         var style = null;
         for (var holiday in holidays) {
-            // console.log(holidays[holiday].type);
             try{
                 var stringDate = holidays[holiday].date.toDateString();
                 var obj = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"]');
@@ -227,7 +231,6 @@ var calendar = {
                 obj[0].firstChild.classList.add(holidays[holiday].type);
         
                 var blockInfoHoliday = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"] p.cld-number p');
-                // console.log(blockInfoHoliday);
         
                 if(holidays[holiday].type=='holiday'){
                     type="Feriado Nacional";
@@ -240,7 +243,7 @@ var calendar = {
                 blockInfoHoliday[2].innerHTML = type;
                 blockInfoHoliday[2].classList.add(holidays[holiday].type);
 
-                this.drawSideHoliday(holidays[holiday]);
+                this.drawSideHoliday(holidays[holiday], type);
             }catch(e){
         
             }
@@ -322,7 +325,7 @@ var calendar = {
             }
         }, false);        
     },
-    drawSideHoliday: function(holiday){
+    drawSideHoliday: function(holiday, type){
         var block_side_holidays = document.getElementById("block_side_holidays");
         var side_holiday = document.createElement("li");
         var media = document.createElement("div");
@@ -330,10 +333,12 @@ var calendar = {
         media.setAttribute("data-target","image");
         media.innerHTML = "<img src='images/imuni.jpg' alt=''/>"
 
+        // console.log(holiday);
         var info = document.createElement("div");
         info.innerHTML = "<div class=info>";
-        info.innerHTML += "<p class=date>"+holiday.getDate()+"</p>";
-        info.innerHTML += "<p class=type><small>FERIADO NACIONAL</small><span>Dia da Mundial da Paz</span></p><a class=button_dnw href=# data-target=dnw>DOWNLOAD</a>";
+        info.innerHTML += "<p class=date>"+holiday.date.getDate()+" de "+this.months[holiday.date.getMonth()]+"</p>";
+        info.innerHTML += "<p class=type><small>"+type+"</small><span>"+holiday.title+"</span></p>";
+        info.innerHTML += "<a class='button_dnw' href='#' data-target='dnw'>DOWNLOAD</a>";
         info.innerHTML += "</div>"
 
         block_side_holidays.appendChild(side_holiday);
