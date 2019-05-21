@@ -117,7 +117,7 @@ var calendar = {
     },
     mountCalendar: function(){
         this.drawGrid();
-        this.drawDays(new Date(2019,5,1));
+        this.drawDays(new Date());
     },
     drawGrid: function(){
         // console.log('%cmounting calendar', 'color:green');
@@ -238,6 +238,7 @@ var calendar = {
                 }
                 blockInfoHoliday[1].innerHTML = holidays[holiday].title;
                 blockInfoHoliday[2].innerHTML = type;
+                blockInfoHoliday[2].classList.add(holidays[holiday].type);
 
                 this.drawSideHoliday(holidays[holiday]);
             }catch(e){

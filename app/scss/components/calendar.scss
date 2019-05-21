@@ -266,7 +266,15 @@
           }
           .new-cld-type{
             font-size:12px;
-            color: #67CE00;
+            &.important{
+              color: #0080FF;
+            }
+            &.star{
+              color: #FFCE00;
+            }
+            &.holiday{
+              color: #67CE00;
+            }
           }
         }
         &.prevMonth{
