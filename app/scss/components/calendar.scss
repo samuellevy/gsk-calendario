@@ -149,6 +149,9 @@
     .new-cld-dayweek, .new-cld-title, .new-cld-type{
       display: none;
     }
+    .new-cld-type{
+      min-width: 100px;
+    }
   }
   .cld-title{
     position: absolute;

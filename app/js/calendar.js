@@ -204,7 +204,7 @@ var calendar = {
             var y = 0;
             x++;
         }
-
+        
         var box_month = document.getElementById('month_name');
         var box_year = document.getElementById('month_year');
         
@@ -212,9 +212,9 @@ var calendar = {
         box_year.innerHTML = month.firstDay.getFullYear();
         
         var box_month_mobile = document.getElementById('month_name_mobile');
-
+        
         console.log(month.firstDay.getFullYear());
-
+        
         box_month_mobile.innerHTML = this.months[month.firstDay.getMonth()] + ", " + month.firstDay.getFullYear();
         this.drawHolidays();
     },
@@ -226,12 +226,12 @@ var calendar = {
             try{
                 var stringDate = holidays[holiday].date.toDateString();
                 var obj = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"]');
-        
+                
                 obj[0].firstChild.classList.add('eventday');
                 obj[0].firstChild.classList.add(holidays[holiday].type);
-        
+                
                 var blockInfoHoliday = document.querySelectorAll('li.cld-day[data-date="'+stringDate+'"] p.cld-number p');
-        
+                
                 if(holidays[holiday].type=='holiday'){
                     type="Feriado Nacional";
                 }else if(holidays[holiday].type=='important'){
@@ -242,12 +242,12 @@ var calendar = {
                 blockInfoHoliday[1].innerHTML = holidays[holiday].title;
                 blockInfoHoliday[2].innerHTML = type;
                 blockInfoHoliday[2].classList.add(holidays[holiday].type);
-
+                
                 this.drawSideHoliday(holidays[holiday], type);
             }catch(e){
-        
+                
             }
-        
+            
         }
         
         var allDays = document.querySelectorAll('li.cld-day');
@@ -258,17 +258,17 @@ var calendar = {
             }
         }
     },
-    drawDay: function(x,y,style=null,date=null){
+    drawDay: function(x,y,style,date){
         var obj = document.querySelectorAll('li.cld-day[data-x="'+x+'"][data-y="'+y+'"] p span');
         var day = date.getDate();
         this.drawElementDay(obj[0],day,style,date.toDateString());
         
         var objCldNumber = document.querySelectorAll('li.cld-day[data-x="'+x+'"][data-y="'+y+'"] p p');
         objCldNumber[0].innerHTML = this.dayWeekName[date.getDay()].substr(0,3);
-
+        
         // console.log(date);
     },
-    drawElementDay: function(container, text, style=null, date){
+    drawElementDay: function(container, text, style, date){
         container.innerHTML = text;
         container.parentElement.parentElement.classList.add(style);
         container.parentElement.parentElement.setAttribute('data-date',date);
@@ -316,12 +316,28 @@ var calendar = {
         // console.log(objs);
     },
     buttonsListener: function(){
+        // Internet Explorer 6-11
+        var isIE = /*@cc_on!@*/false || !!document.documentMode;
+        
+        // Edge 20+
+        var isEdge = !isIE && !!window.StyleMedia;
+        
         document.addEventListener('click', function (event) {
-            if (event.target.matches('.cld-fwd')){
-                calendar.nextMonth();
-            }
-            if (event.target.matches('.cld-rwd')){
-                calendar.previousMonth();
+            // var matches = event.target.matches ? event.target.matches('.dropbtn') : event.target.msMatchesSelector('.dropbtn');
+            if(isIE || isEdge){
+                if (event.target.msMatchesSelector('.cld-fwd')){
+                    calendar.nextMonth();
+                }
+                if (event.target.msMatchesSelector('.cld-rwd')){
+                    calendar.previousMonth();
+                }
+            }else{
+                if (event.target.matches('.cld-fwd')){
+                    calendar.nextMonth();
+                }
+                if (event.target.matches('.cld-rwd')){
+                    calendar.previousMonth();
+                }
             }
         }, false);        
     },
@@ -332,15 +348,14 @@ var calendar = {
         media.classList.add("media");
         media.setAttribute("data-target","image");
         media.innerHTML = "<img src='images/imuni.jpg' alt=''/>"
-
+        
         // console.log(holiday);
         var info = document.createElement("div");
-        info.innerHTML = "<div class=info>";
-        info.innerHTML += "<p class=date>"+holiday.date.getDate()+" de "+this.months[holiday.date.getMonth()]+"</p>";
+        info.classList.add('info');
+        info.innerHTML = "<p class=date>"+holiday.date.getDate()+" de "+this.months[holiday.date.getMonth()]+"</p>";
         info.innerHTML += "<p class=type><small>"+type+"</small><span>"+holiday.title+"</span></p>";
         info.innerHTML += "<a class='button_dnw' href='#' data-target='dnw'>DOWNLOAD</a>";
-        info.innerHTML += "</div>"
-
+        
         block_side_holidays.appendChild(side_holiday);
         side_holiday.appendChild(media);
         side_holiday.appendChild(info);

@@ -34,8 +34,13 @@ $(document).ready(function () {
         if ($(this).hasClass('day')) {
             $('#calendar').addClass('list_days');
             // new custom scrollbar
-            $('.cld-main').mCustomScrollbar({ 
-                theme:"dark-3"        
+            $('.cld-main').mCustomScrollbar({
+                theme:"dark-3",
+                callbacks: {
+                    onScroll: function(){
+                        scrollingBar(this);
+                    }
+                }
             });
         }
         else {
@@ -43,6 +48,18 @@ $(document).ready(function () {
             $('.cld-main').mCustomScrollbar('destroy');
         }
     });
+
+
+    function scrollingBar(scrollbox) {
+        if (scrollbox.mcs.topPct == 100) {
+            $(scrollbox).mCustomScrollbar('scrollTo', '4%', '1');
+            $('.cld-fwd').trigger('click');
+        }
+        else if (scrollbox.mcs.topPct == 0) {
+            $(scrollbox).mCustomScrollbar('scrollTo', '96%');
+            $('.cld-rwd').trigger('click');
+        }
+    }
 
     $('.side_bar_holidays').mCustomScrollbar({ 
         theme:"dark-3"        
