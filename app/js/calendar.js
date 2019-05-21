@@ -249,12 +249,10 @@ var calendar = {
         
         var allDays = document.querySelectorAll('li.cld-day');
         for (var selectedDay in allDays) {
-            // ctrl+shift+k (para abrir o console no mozilla firefox)
             try{
                 var stringDate = allDays[selectedDay].getAttribute("data-date");
             }catch(e){
             }
-            // console.log(stringDate);
         }
     },
     drawDay: function(x,y,style=null,date=null){
